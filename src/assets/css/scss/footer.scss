@@ -14,11 +14,18 @@ footer {
         flex-wrap: wrap;
         align-content: center;
         align-items: baseline;
+        justify-content: space-between;
         gap: var(--default-spacing);
         padding: 0;
 
         @media screen and (max-width:800px) {
             flex-direction: column;
+            align-content: flex-start;
         }
+    }
+
+    .footer__notes {
+        font-size: small;
+        padding: 0 0.5rem;
     }
 }

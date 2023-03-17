@@ -2,9 +2,7 @@
 title: "Overview"
 slug: "overview"
 lastDateUpdated: 2023-03-07
-category: ["get-started"]
 categorySequence: 1
-tags: ["fdtechdotnet"]
 ---
 
 # Overview

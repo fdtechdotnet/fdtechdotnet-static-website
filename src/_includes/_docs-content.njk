@@ -37,21 +37,26 @@
                 </a>
             </div>
         </header>
-        <main>{{ content | safe }}</main>
-        <footer>
-            <section class="container footer__nav">
-                <nav>
-                    <ul class="nav__menu">
-                        <li class="nav__menu-link">
-                            <a href="/about">About</a>
-                        </li>
-                        <li class="nav__menu-link">
-                            <a href="{{ siteGitHubRepository }}" target="_blank">GitHub Repository</a>
-                        </li>
-                    </ul>
-                </nav>
-                <label class="footer__notes">&copy; {% currentYear %} - Developed by <a href="{{ githubProfile }}" target="_blank">{{ author }}</a></label>
+        <main class="container">
+            <section class="docs-left-nav"></section>
+            <section class="docs-content">
+                {{ content | safe }}
             </section>
+        </main>
+        <footer>
+            <div class="container footer__nav">
+                {% include '_nav.njk' %}
+            </div>
+            {# <div class="container">
+                <section>
+                    <label class="me-auto">&copy; {% currentYear %} <a href="{{ sitePortal }}" target="_blank">{{ siteName }}</a>. </label>
+                    <label class="me-auto">Powered by
+                        <a href="https://www.11ty.dev/" target="_blank">Eleventy</a>,
+                        <a href="https://github.com/" target="_blank">GitHub</a>, and
+                        <a href="https://azure.microsoft.com/en-us/services/app-service/static/" target="_blank">Azure Static WebApps</a>.
+                    </label>
+                </section>
+            </div> #}
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
