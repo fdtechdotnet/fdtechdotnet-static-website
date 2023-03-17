@@ -5,6 +5,10 @@ This page primarily serve as Author's documentation of learning journey and expe
 
 The "**fdtechdotnet**" is the shorthand handle name of this page derived from the pursuit of learning and using .NET technologies in terms of full-stack web application development and delivery using cloud services for infrastructure.
 
+## Target Learning Scope
+
+![Learning Scope Overview](https://github.com/cristianmayo/fdtechdotnet/blob/1ccb62fdcffa5374006a77d6dafdd2161508b427/src/assets/svg/learning-overview.drawio.svg)
+
 
 ## Online Editors
 
