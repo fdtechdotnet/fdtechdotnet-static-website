@@ -1,0 +1,11 @@
+{
+    "layout": "_base.njk",
+    "siteName": "Fullstack-dev Technology",
+    "sitePortal": "https://fullstackdev-tech.net/",
+    "siteSubtitle": "Learn. Experience. Improve.",
+    "siteHandlename": "@fdtechdotnet",
+    "author": "Cristian Mayo",
+    "authorThumbnail": "/assets/img/_author.png",
+    "githubProfile": "https://github.com/cristianmayo",
+    "linkedinProfile": "https://www.linkedin.com/in/cristianmayo"
+}

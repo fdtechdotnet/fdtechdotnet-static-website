@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Articles for Fullstack-dev Technology">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/da24d161f6.js" crossorigin="anonymous"></script>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5295597570562522" crossorigin="anonymous"></script>
+        <link rel="icon" href="/assets/img/_logo.png">
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <div class="container">
+                <a class="logo-brand" href="/">
+                    <img src="/assets/img/_logo.png" alt="Logo Thumbnail">
+                </a>
+                <div class="header__title">
+                    <span>{{ siteName }}</span>
+                    <span>{{ siteHandlename }}</span>
+                </div>
+                <div class="header__nav">
+                    {% include '_nav.njk' %}
+                </div>
+                <a class="header__menu-toggle">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </a>
+            </div>
+        </header>
+        {{ content | safe }}
+        <footer>
+            <div class="container footer__nav">
+                {% include '_nav.njk' %}
+            </div>
+            {# <div class="container">
+                <section>
+                    <label class="me-auto">&copy; {% currentYear %} <a href="{{ sitePortal }}" target="_blank">{{ siteName }}</a>. </label>
+                    <label class="me-auto">Powered by
+                        <a href="https://www.11ty.dev/" target="_blank">Eleventy</a>,
+                        <a href="https://github.com/" target="_blank">GitHub</a>, and
+                        <a href="https://azure.microsoft.com/en-us/services/app-service/static/" target="_blank">Azure Static WebApps</a>.
+                    </label>
+                </section>
+            </div> #}
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <script src="/assets/js/script.min.js" async></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+header {
+    border-bottom: solid 1px var(--bg-slategray);
+    background-color: var(--bg-dark);
+    box-shadow: var(--shadow-dark-bottom);
+    -webkit-box-shadow: var(--shadow-dark-bottom);
+    -moz-box-shadow: var(--shadow-dark-bottom);
+    padding: var(--two-spacing) 0;
+
+    @media screen and (max-width:800px) {
+        padding: var(--default-spacing) 0;
+    }
+
+    > .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 1rem;
+
+        .logo-brand img {
+            width: 50px;
+        }
+
+        .header__title {
+            flex: 1;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: normal;
+
+            span {
+                font-family: "Saira", 'Segoe UI';
+                color: var(--text-light);
+
+                &:first-child {
+                    font-size: var(--text-size-title);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    line-height: 1rem;
+
+                    @media screen and (max-width:500px) {
+                        font-size: initial;
+                        font-weight: 700;
+                    }
+                }
+
+                @media screen and (max-width:500px) {
+                    &:last-child {
+                        font-size: small;
+                    }
+                }
+            }
+        }
+
+        .header__nav {
+            display: block;
+
+            @media screen and (max-width:800px) {
+                display: none;
+            }
+        }
+
+        .header__menu-toggle {
+            padding: calc(var(--default-spacing)/2);
+            color: var(--text-light);
+            display: none;
+
+            @media screen and (max-width:800px) {
+                display: block;
+            }
+        }
+    }
+}

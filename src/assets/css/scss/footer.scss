@@ -1,0 +1,24 @@
+footer {
+    color: var(--text-light);
+    padding: var(--default-spacing);
+    margin: 0;
+    border-top: solid 1px var(--bg-slategray);
+    background-color: var(--bg-dark);
+    box-shadow: var(--shadow-dark-top);
+    -webkit-box-shadow: var(--shadow-dark-top);
+    -moz-box-shadow: var(--shadow-dark-top);
+
+    .footer__nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: baseline;
+        gap: var(--default-spacing);
+        padding: 0;
+
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+        }
+    }
+}

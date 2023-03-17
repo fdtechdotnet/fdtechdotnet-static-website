@@ -1,0 +1,43 @@
+{
+  "name": "eleventy-blogsite-generator",
+  "version": "1.0.0",
+  "description": "11ty Static Site Generator for Blog CMS",
+  "main": "src/index.njk",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianmayo/eleventy-blogsite-generator.git"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "nunjucks",
+    "static-site-generator",
+    "blog-cms"
+  ],
+  "author": "cristianmayo",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/cristianmayo/eleventy-blogsite-generator/issues"
+  },
+  "homepage": "https://github.com/cristianmayo/eleventy-blogsite-generator#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@babel/core": "^7.18.5",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "lodash": "^4.17.21",
+    "luxon": "^2.3.1",
+    "node-sass": "^8.0.0",
+    "sass": "^1.57.1"
+  }
+}

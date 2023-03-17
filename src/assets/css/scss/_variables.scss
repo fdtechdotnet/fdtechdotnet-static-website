@@ -1,0 +1,30 @@
+:root {
+    --bg-primary: #0954ff;
+    --bg-dark: rgb(33,37,41);
+    --bg-dimgray: dimgray;
+    --bg-slategray: rgb(44, 50, 56);
+    --bg-light: #c0c0c0;
+
+    --device-width-lg: 1440px;
+    --device-width-md: 768px;
+    --device-width-sm: 425px;
+
+    --default-spacing: 1rem;
+    --two-spacing: 2rem;
+    --three-spacing: 3rem;
+    --five-spacing: 5rem;
+
+    --text-size-title: 1.25rem;
+    --text-size-default: 1rem;
+    --text-size-lg: 1.5rem;
+    --text-size-xl: 2rem;
+    --text-primary: #0954ff;
+    --text-muted: #333333;
+    --text-slategray: rgb(42, 48, 56);
+    --text-light: #c0c0c0;
+    --text-white: #eeeeee;
+
+    --shadow-dark-bg: rgba(0,0,0,.175);
+    --shadow-dark-bottom: 0 2rem 3rem var(--shadow-dark-bg);
+    --shadow-dark-top: 0 -2rem 3rem var(--shadow-dark-bg);
+}
