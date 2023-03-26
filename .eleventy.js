@@ -8,6 +8,7 @@ module.exports = function(config) {
     config.addPassthroughCopy("./src/assets/css/**/*.min.css");
     config.addPassthroughCopy("./src/assets/js/**/*.min.js");
     config.addPassthroughCopy("./src/assets/img/**/*");
+    config.addPassthroughCopy("./src/assets/svg/**/*");
 
     // Short Codes
     config.addShortcode("dateToday", () => `${new Date().toLocaleString(DateTime.DATE_HUGE)}`);
