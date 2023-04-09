@@ -18,14 +18,9 @@ nav {
     }
 
     .nav__menu-link {
-        padding: 0.5rem 1rem;
 
         @media screen and (max-width:450px) {
             padding: 0.5rem;
-        }
-
-        &.active {
-            border-top: solid 3px var(--bg-primary);
         }
 
         a {
@@ -34,6 +29,12 @@ nav {
             font-size: small;
             color: var(--text-light);
             text-transform: uppercase;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                border-top: solid 3px var(--bg-primary);
+                text-decoration: none;
+            }
         }
     }
 
