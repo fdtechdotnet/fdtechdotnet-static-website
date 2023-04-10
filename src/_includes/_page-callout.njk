@@ -1,10 +1,28 @@
+<nav class="container page-callout-nav">
+    <ul class="page-callout-nav__menu">
+        <li class="page-callout-nav__menu-link">
+            <a href="">Learning Resources</a>
+        </li>
+        <li class="page-callout-nav__menu-link">
+            <a href="/spotlights">Spotlights</a>
+        </li>
+    </ul>
+</nav>
 <section class="page-callout">
     <div class="container">
         <article>
-            <h1 class="page-callout__title">{{ calloutTitle }}</h1>
-            {% if calloutDescription %}
-                <p class="page-callout__description">{{ calloutDescription }}</p>
+            <h1 class="page-callout__title">{{ title }}</h1>
+            {% if description %}
+            <p class="page-callout__description">{{ description }}</p>
             {% endif %}
         </article>
+        {% if calloutActionLink %}
+        <aside>
+            <a href="{{calloutActionLink}}" class="page-callout__action-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="page-callout__action-text">{{calloutActionText}} »</span>
+            </a>
+        </aside>
+        {% endif %}
     </div>
 </section>

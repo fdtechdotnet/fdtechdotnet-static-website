@@ -1,8 +1,8 @@
 ---
-title: Get Started
+title: Software Engineering Jumpstart
 description: Now that you decided to start your learning journey, let's have a quick glance at Software Engineering and some key areas to jumpstart your learning journey.
-date: 2023-04-10T20:39:38.965Z
-lastDateUpdated: 2023-04-10T20:39:36.349Z
+date: 2023-04-10T20:31:26.043Z
+lastDateUpdated: 2023-04-10T20:37:51.718Z
 categories:
   - get-started
 tags:

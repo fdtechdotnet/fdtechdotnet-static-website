@@ -1,0 +1,53 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "lastDateUpdated",
+          "name": "lastDateUpdated",
+          "type": "datetime"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "11ty",
+  "frontMatter.preview.host": "http://localhost:8080",
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]",
+      "title": "[[workspace]]"
+    },
+    {
+      "path": "[[workspace]]/src/articles/get-started"
+    }
+  ]
+}
