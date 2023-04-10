@@ -25,18 +25,24 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Saira", 'Segoe UI';
-    text-transform: uppercase;
     color: var(--text-primary);
     margin: 0 0 calc(var(--default-spacing)/2) 0;
     padding: 0;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
+
+h3, h4, h5, h6 {
+    text-transform: capitalize;
 }
 
 h1 { font-size: xx-large; }
 h2 { font-size: x-large; }
 h3 { font-size: larger; }
 h4 { font-size: large; }
-h5 { font-size: medium; }
-h6 { font-size: small; }
+h5, h6 { font-size: medium; }
 
 a {
     text-decoration: none; color: var(--text-primary);

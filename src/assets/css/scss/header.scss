@@ -52,21 +52,11 @@ header {
             }
         }
 
-        .header__nav {
+        .header__default-nav {
             display: block;
 
             @media screen and (max-width:800px) {
                 display: none;
-            }
-        }
-
-        .header__menu-toggle {
-            padding: calc(var(--default-spacing)/2);
-            color: var(--text-light);
-            display: none;
-
-            @media screen and (max-width:800px) {
-                display: block;
             }
         }
     }

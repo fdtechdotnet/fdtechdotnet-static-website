@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-blogsite-generator",
+  "name": "fdtechdotnet",
   "version": "1.0.0",
-  "description": "11ty Static Site Generator for Blog CMS",
+  "description": "Fullstack-dev Technology",
   "main": "src/index.njk",
   "scripts": {
     "start": "eleventy --serve",
@@ -9,21 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cristianmayo/eleventy-blogsite-generator.git"
+    "url": "git+https://github.com/cristianmayo/fdtechdotnet.git"
   },
   "keywords": [
     "11ty",
     "eleventy",
     "nunjucks",
-    "static-site-generator",
-    "blog-cms"
+    "static-site-generator"
   ],
   "author": "cristianmayo",
   "license": "MIT License",
   "bugs": {
-    "url": "https://github.com/cristianmayo/eleventy-blogsite-generator/issues"
+    "url": "https://github.com/cristianmayo/fdtechdotnet/issues"
   },
-  "homepage": "https://github.com/cristianmayo/eleventy-blogsite-generator#readme",
+  "homepage": "https://github.com/cristianmayo/fdtechdotnet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@babel/core": "^7.18.5",
@@ -37,7 +36,12 @@
     "gulp-uglify": "^3.0.2",
     "lodash": "^4.17.21",
     "luxon": "^2.3.1",
+    "markdown-it-anchor": "^8.6.7",
     "node-sass": "^8.0.0",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "slugify": "^1.6.6"
+  },
+  "dependencies": {
+    "eleventy-plugin-toc": "^1.1.5"
   }
 }

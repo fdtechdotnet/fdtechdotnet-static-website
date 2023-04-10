@@ -1,5 +1,9 @@
 const _ = require("lodash");
 const { DateTime } = require("luxon");
+const slugify = require("slugify");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = function(config) {
     config.setUseGitIgnore(true);
@@ -25,24 +29,51 @@ module.exports = function(config) {
         const content = post.replace(/(<([^>]+)>)/gi, "");
         return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
     });
-    config.addCollection("postsByYear", (collection) => {
-        return _
-            .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/articles/'))
-            .groupBy((post) => post.date.getFullYear())
-            .toPairs()
-            .reverse()
-            .value();
+    config.addFilter("slugify", (str) => {
+        if (!str) { return; }
+        return slugify(str, {
+            lower: true,
+            strict: true,
+            remove: /["]/g,
+        });
     });
     config.addCollection("postsByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
             .filter((post) => post.url && post.inputPath.startsWith('./src/articles/'))
-            .groupBy((post) => post.data.category)
+            .groupBy((post) => post.data.categories)
             .toPairs()
             .reverse()
             .value();
     });
+
+    // Anchor
+    const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
+        class: "anchor",
+        symbol: "<span hidden>#</span>",
+        style: "aria-labelledby",
+    });
+    const markdownItAnchorOptions = {
+        level: [1, 2, 3],
+        slugify: (str) => slugify(str, {
+            lower: true,
+            strict: true,
+            remove: /["]/g,
+        })
+    };
+
+    /* Markdown Overrides */
+    let markdownLibrary = markdownIt().use(markdownItAnchor, markdownItAnchorOptions);
+    // This is the part that tells 11ty to swap to our custom config
+    config.setLibrary("md", markdownLibrary);
+
+    // Plugins
+    config.addPlugin(pluginTOC, {
+        tags: ['h2', 'h3', 'h4'],
+        wrapper: 'nav',
+        ul: true,
+        flat: false
+      });
 
     return {
         dir: {

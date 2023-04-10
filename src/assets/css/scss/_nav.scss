@@ -19,7 +19,7 @@ nav {
 
     .nav__menu-link {
 
-        @media screen and (max-width:450px) {
+        @media screen and (max-width:800px) {
             padding: 0.5rem;
         }
 
@@ -33,6 +33,7 @@ nav {
 
             &:hover {
                 border-top: solid 3px var(--bg-primary);
+                color: var(--text-white);
                 text-decoration: none;
             }
         }

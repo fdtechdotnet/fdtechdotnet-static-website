@@ -1,0 +1,35 @@
+.article-mainpage {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &__toc {
+        width: 20rem;
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 1.5rem;
+
+            & > li a {
+                display: block;
+                padding: 0.25rem;
+                color: var(--text-light);
+
+                &:hover {
+                    color: var(--text-white);
+                }
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}

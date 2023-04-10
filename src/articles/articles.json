@@ -1,0 +1,6 @@
+{
+    "layout": "_article-mainpage.njk",
+    "permalink": "/articles/{{ title | slugify }}/",
+    "categories": ["article"],
+    "tags": ["fdtechdotnet"]
+}
