@@ -3,10 +3,6 @@ aside {
     background-color: var(--bg-slategray);
     border-radius: 0.25rem;
 
-    @media screen and (max-width:800px) {
-        display: none;
-    }
-
     > h6 {
         text-transform: uppercase;
     }

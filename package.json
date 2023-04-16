@@ -25,7 +25,9 @@
   "homepage": "https://github.com/cristianmayo/fdtechdotnet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@babel/core": "^7.18.5",
+    "@kevingimbel/eleventy-plugin-mermaid": "^2.1.0",
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -37,6 +39,7 @@
     "lodash": "^4.17.21",
     "luxon": "^2.3.1",
     "markdown-it-anchor": "^8.6.7",
+    "mermaid": "^10.1.0",
     "node-sass": "^8.0.0",
     "sass": "^1.57.1",
     "slugify": "^1.6.6"

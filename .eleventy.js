@@ -4,6 +4,7 @@ const slugify = require("slugify");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginTOC = require('eleventy-plugin-toc');
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(config) {
     config.setUseGitIgnore(true);
@@ -48,11 +49,6 @@ module.exports = function(config) {
     });
 
     // Anchor
-    const linkAfterHeader = markdownItAnchor.permalink.linkAfterHeader({
-        class: "anchor",
-        symbol: "<span hidden>#</span>",
-        style: "aria-labelledby",
-    });
     const markdownItAnchorOptions = {
         level: [1, 2, 3],
         slugify: (str) => slugify(str, {
@@ -73,7 +69,8 @@ module.exports = function(config) {
         wrapper: 'nav',
         ul: true,
         flat: false
-      });
+    });
+    config.addPlugin(pluginMermaid);
 
     return {
         dir: {

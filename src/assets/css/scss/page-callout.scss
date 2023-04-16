@@ -7,6 +7,12 @@
     > .container {
         display: flex;
         gap: var(--default-spacing);
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+        }
 
         article {
             flex: 1;
@@ -15,6 +21,15 @@
         aside {
             background-color:transparent;
             width: 25rem;
+
+            @media screen and (max-width:800px) {
+                padding: var(--default-spacing) 0 0 0;
+                width: 100%;
+
+                a {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -42,6 +57,11 @@
         align-items: center;
         gap: 0.5rem;
 
+        @media screen and (max-width:800px) {
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
         > .fa-book-open {
             font-size: 5rem;
             padding: 0 2rem;
@@ -65,6 +85,10 @@
     &-nav {
         padding: var(--default-spacing);
         display: block;
+
+        @media screen and (max-width:800px) {
+            display: none;
+        }
 
         &__menu {
             list-style-type: none;
