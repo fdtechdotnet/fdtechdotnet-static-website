@@ -1,5 +1,5 @@
 {
-    "layout": "_article-mainpage.njk",
-    "categories": ["article"],
+    "layout": "_base.njk",
+    "categories": ["category-page"],
     "tags": ["fdtechdotnet"]
 }

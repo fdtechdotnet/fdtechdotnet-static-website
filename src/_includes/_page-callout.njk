@@ -1,13 +1,3 @@
-<nav class="container page-callout-nav">
-    <ul class="page-callout-nav__menu">
-        <li class="page-callout-nav__menu-link">
-            <a href="">Learning Resources</a>
-        </li>
-        <li class="page-callout-nav__menu-link">
-            <a href="/spotlights">Spotlights</a>
-        </li>
-    </ul>
-</nav>
 <section class="page-callout">
     <div class="container">
         <article>
@@ -17,12 +7,12 @@
             {% endif %}
         </article>
         {% if calloutActionLink %}
-        <aside>
-            <a href="{{calloutActionLink}}" class="page-callout__action-link">
-                <i class="fa-solid fa-book-open"></i>
-                <span class="page-callout__action-text">{{calloutActionText}} »</span>
-            </a>
-        </aside>
+        <a href="{{calloutActionLink}}" class="page-callout__action-link">
+            <span class="page-callout__action-text">
+                {{calloutActionText}}
+                <i class="fa-solid fa-angles-right fa-1x"></i>
+            </span>
+        </a>
         {% endif %}
     </div>
 </section>
