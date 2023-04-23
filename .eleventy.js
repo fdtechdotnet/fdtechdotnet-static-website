@@ -38,10 +38,29 @@ module.exports = function(config) {
             remove: /["]/g,
         });
     });
-    config.addCollection("postsByCategory", (collection) => {
+
+    // Article config
+    config.addCollection("articlesByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
             .filter((post) => post.url && post.inputPath.startsWith('./src/articles/'))
+            .groupBy((post) => post.data.categories)
+            .toPairs()
+            .reverse()
+            .value();
+    });
+
+    // Blog config
+    config.addCollection("blogPosts", (collection) => { return _
+        .chain(collection.getAllSorted())
+        .filter((post) => post.url && post.inputPath.startsWith('./src/blog/'))
+        .reverse()
+        .value();
+    });
+    config.addCollection("blogByCategory", (collection) => {
+        return _
+            .chain(collection.getAllSorted())
+            .filter((post) => post.url && post.inputPath.startsWith('./src/blog/'))
             .groupBy((post) => post.data.categories)
             .toPairs()
             .reverse()

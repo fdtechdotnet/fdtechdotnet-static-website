@@ -1,0 +1,33 @@
+---
+layout: _base.njk
+---
+
+{% include '_blog-nav.njk' %}
+{% include '_page-callout.njk' %}
+
+<section class="container blog-page">
+    <aside class="blog-page__toc small">
+        <h6>Table Of Contents</h6>
+        {{ content | toc | safe }}
+    </aside>
+    <article class="blog-page__content">
+        {{ content | safe }}
+        <div class="giscus giscus-frame"></div>
+    </article>
+</section>
+
+<script src="https://giscus.app/client.js"
+    data-repo="cristianmayo/fdtechdotnet"
+    data-repo-id="R_kgDOJKvtLA"
+    data-category="Blog"
+    data-category-id="DIC_kwDOJKvtLM4CV-Z_"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="1"
+    data-input-position="top"
+    data-theme="dark"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+</script>

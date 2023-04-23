@@ -1,0 +1,5 @@
+{
+    "layout": "_blog-page.njk",
+    "permalink": "blog/{{ title | slugify }}/",
+    "tags": ["fdtechdotnet", "post", "blog"]
+}

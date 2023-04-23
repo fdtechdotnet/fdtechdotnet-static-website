@@ -1,7 +1,8 @@
 ---
-title: Learning Overview
+title: Sample Featured Article Post
 categories:
-  - featured
+  - Featured
+  - Samples
 tags:
   - webapp-development
   - webapp-delivery
@@ -9,6 +10,7 @@ tags:
   - process-automation
   - cloud-infrastructure
   - cloud-architecture
+  - featured
 description: Learning full-stack application development and delivery can seem overwhelming at first, but it can be more manageable by breaking down into smaller scope.
 ---
 

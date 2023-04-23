@@ -1,7 +1,6 @@
 {
     "layout": "_article-mainpage.njk",
-    "calloutTitle": "{{ title }}",
     "permalink": "articles/get-started/{{ title | slugify }}/",
-    "categories": ["article", "get-started"],
-    "tags": ["fdtechdotnet"]
+    "categories": ["Get Started"],
+    "tags": ["fdtechdotnet", "post", "article", "article-page"]
 }

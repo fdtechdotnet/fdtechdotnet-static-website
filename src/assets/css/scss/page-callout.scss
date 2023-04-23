@@ -16,24 +16,24 @@
         @media screen and (max-width:800px) {
             flex-direction: column;
             align-items: flex-start;
-            gap: var(--two-spacing);
+            gap: 0;
         }
 
         article {
             flex: 1;
         }
 
-        aside {
+        div {
             background-color:transparent;
-            width: 25rem;
+            text-align: center;
+            width: 25%;
 
             @media screen and (max-width:800px) {
-                padding: var(--default-spacing) 0 0 0;
-                width: 100%;
+                display: none;
+            }
 
-                a {
-                    width: 100%;
-                }
+            > [class*='fa-'] {
+                font-size: calc(var(--text-size-lg) * 5);
             }
         }
     }
@@ -50,37 +50,24 @@
     }
 
     &__description {
-        margin: 0.5rem 0 0 0;
+        margin: 0.5rem 0;
     }
 
     &__action-link {
-        color: var(--text-lightgray) !important;
-        padding: 0.5rem var(--two-spacing);
-        background-color: var(--bg-dark);
-        border: 2px solid var(--bg-lightgray);
+        margin-top: var(--two-spacing);
+        padding: 1rem var(--two-spacing);
+        background-color: var(--bg-light);
         border-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
+        display: inline-block;
 
         @media screen and (max-width:800px) {
             flex-wrap: wrap;
             align-content: flex-start;
         }
 
-        > .fa-book-open {
-            font-size: 5rem;
-            padding: 0 2rem;
-            border-left: solid 3px var(--bg-slategray);
-            border-right: solid 3px var(--bg-slategray);
-            border-radius: 0.5rem;
-        }
-
         &:hover {
-            color: var(--text-white) !important;
+            background-color: #fff;
+            color: var(--text-primary);
         }
     }
 

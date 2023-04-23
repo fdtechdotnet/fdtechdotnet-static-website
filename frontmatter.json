@@ -49,5 +49,11 @@
     {
       "path": "[[workspace]]/src/articles/get-started"
     }
+  ],
+  "frontMatter.taxonomy.categories": [
+    "Featured",
+    "General",
+    "Get Started",
+    "featured"
   ]
 }

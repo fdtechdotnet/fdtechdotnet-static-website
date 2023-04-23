@@ -16,9 +16,5 @@
         "webapp-delivery",
         "webapp-development"
     ],
-    "frontMatter.taxonomy.categories": [
-        "featured",
-        "get-started"
-    ],
     "frontMatter.dashboard.openOnStart": true
 }
