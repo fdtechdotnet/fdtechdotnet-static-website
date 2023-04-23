@@ -1,12 +1,53 @@
 ---
 title: Blog
+description: Keep up with the latest updates of this website as well as author's insights and experience with on-going learning journey and active projects
+permalink: /blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
+calloutFontAwesomeIcon: fa-comments
+pagination:
+    data: collections.blogPosts
+    size: 3
+    alias: pagedBlogPosts
 ---
+
 {% include '_page-callout.njk' %}
 
-<section class="container">
-    <div class="under-construction">
-        <h2>Foundation of the stacks still under construction!</h2>
-        <div>Look forward to your next visit soon.</div>
-    </div>
+<section class="container recent-blog">
+    <aside  class="recent-blog__sidebar">
+        <div class="recent-blog__categories">
+            <h6>Categories</h6>
+            <ul>
+            {% for category in collections.blogByCategory %}
+                <li>{{ category[0] }} ({{ category[1].length }})</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <article class="recent-blog__list">
+        <ul>
+        {% for post in pagedBlogPosts | sort(false, false, date) %}
+            <li>
+                <a href="{{ post.url }}" class="recent-blog__title">{{ post.data.title }}</a>
+                <div class="recent-blog__meta small">Published on {{ post.data.date | postDate }}</div>
+                <a href="{{ post.url }}" class="recent-blog__excerpt">
+                    {{ post.templateContent | excerpt }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        <nav class="recent-blog__page-nav">
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" class="page-nav page-nav__previous">
+                <i class="fa-solid fa-angles-left fa-2x"></i>
+                <span>PREVIOUS</span>
+            </a>
+            {%else%}<small>Click 'Next' for more recent posts...</small>{% endif %}
 
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" class="page-nav page-nav__next">
+                <span>NEXT</span>
+                <i class="fa-solid fa-angles-right fa-2x"></i>
+            </a>
+            {%else%}<small>You've reaced the end of the list!</small>{% endif %}
+        </nav>
+    </article>
 </section>

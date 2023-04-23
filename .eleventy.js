@@ -26,6 +26,18 @@ module.exports = function(config) {
             .fromJSDate(dateObject)
             .toLocaleString(DateTime.DATE_HUGE);
     });
+    config.addFilter("ymdDateFormat", (date) => {
+        // Create a new Date object from the input date string
+        var inputDate = new Date(date);
+
+        // Extract the year, month, and day components from the date object
+        var year = inputDate.getFullYear();
+        var month = ("0" + (inputDate.getMonth() + 1)).slice(-2);
+        var day = ("0" + inputDate.getDate()).slice(-2);
+
+        // Return the date string in the "YYYY/MM/DD" format
+        return year + "/" + month + "/" + day;
+      });
     config.addFilter("excerpt", (post) => {
         const content = post.replace(/(<([^>]+)>)/gi, "");
         return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
@@ -43,7 +55,7 @@ module.exports = function(config) {
     config.addCollection("articlesByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/articles/'))
+            .filter((post) => post.url && post.inputPath.startsWith('./src/articles/') && !post.data.draft)
             .groupBy((post) => post.data.categories)
             .toPairs()
             .reverse()
@@ -53,14 +65,14 @@ module.exports = function(config) {
     // Blog config
     config.addCollection("blogPosts", (collection) => { return _
         .chain(collection.getAllSorted())
-        .filter((post) => post.url && post.inputPath.startsWith('./src/blog/'))
+        .filter((post) => post.url && post.inputPath.startsWith('./src/blog/')  && !post.data.draft)
         .reverse()
         .value();
     });
     config.addCollection("blogByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/blog/'))
+            .filter((post) => post.url && post.inputPath.startsWith('./src/blog/')  && !post.data.draft)
             .groupBy((post) => post.data.categories)
             .toPairs()
             .reverse()
@@ -84,7 +96,7 @@ module.exports = function(config) {
 
     // Plugins
     config.addPlugin(pluginTOC, {
-        tags: ['h2', 'h3', 'h4'],
+        tags: ['h1', 'h2', 'h3'],
         wrapper: 'nav',
         ul: true,
         flat: false

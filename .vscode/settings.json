@@ -1,20 +1,5 @@
 {
     "[markdown]": {
     },
-    "frontMatter.taxonomy.tags": [
-        "cloud-architecture",
-        "cloud-infrastructure",
-        "development",
-        "devops-practices",
-        "infrastructure",
-        "operations",
-        "process-automation",
-        "software-delivery",
-        "software-development",
-        "software-development-lifecycle",
-        "software-engineering",
-        "webapp-delivery",
-        "webapp-development"
-    ],
     "frontMatter.dashboard.openOnStart": true
 }

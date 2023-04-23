@@ -1,3 +1,205 @@
 main {
     margin: 2rem 0;
 }
+
+.recent-article {
+    border-left: solid 1rem var(--bg-primary);
+    padding: 0 var(--default-spacing);
+    margin: 5rem 0;
+
+    @media screen and (max-width:800px) {
+        border-left: solid 0.75rem var(--bg-primary);
+        margin: 3rem 0;
+    }
+
+    @media screen and (max-width:450px) {
+        border-left: solid 0.5rem var(--bg-primary);
+        margin: 2rem 0;
+    }
+
+    &__title {
+        text-transform: unset;
+        font-size: var(--text-size-xl);
+        line-height: 110%;
+        margin: 0.5rem 0;
+        padding: 0;
+
+        @media screen and (max-width:800px) {
+            font-size: var(--text-size-lg);
+        }
+
+        @media screen and (max-width:450px) {
+            font-size: var(--text-size-title);
+        }
+    }
+
+    &__postdate {
+        color: var(--text-light);
+        font-size: small;
+    }
+
+    &__excerpt {
+        color: var(--text-white);
+        border-left: solid 1rem var(--bg-light);
+        padding: 0rem 1rem;
+        color: var(--text-light);
+
+        @media screen and (max-width:800px) {
+            border-left: solid 0.75rem var(--bg-light);
+        }
+
+        @media screen and (max-width:450px) {
+            border-left: solid 0.5rem var(--bg-light);
+        }
+    }
+
+    &__tags {
+        list-style: none;
+        font-size: small;
+        margin: 0.5rem 0;
+        padding: 0;
+        gap: 0.5rem;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+
+        @media screen and (max-width:450px) {
+            display: none;
+        }
+    }
+
+    &__button {
+        font-family: 'Montserrat', Verdana;
+        font-weight: bold;
+        padding: var(--default-spacing) var(--two-spacing);
+        background-color: var(--bg-light);
+        color: #000;
+        border-radius: 0.25rem;
+        border: none;
+    }
+}
+
+.recent-blog {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--three-spacing);
+
+    @media screen and (max-width:800px) {
+        flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-white);
+    }
+
+    h1 {
+        color: var(--text-white);
+        border-top: 5px solid var(--bg-primary);
+        padding-top: var(--two-spacing);
+    }
+
+    &__sidebar {
+        order: 2;
+
+        @media screen and (max-width:800px) {
+            width: 100%;
+            order: 1;
+        }
+    }
+
+    &__list {
+        flex: 1;
+        order: 1;
+
+        @media screen and (max-width:800px) {
+            order: 2;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            > li {
+                border-left: solid 1rem var(--bg-primary);
+                padding: 0rem 1rem;
+                margin: 3rem 0;
+            }
+
+            > li:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__page-nav {
+        border-top: 5px solid var(--bg-primary);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+
+        & > .page-nav {
+            padding: var(--default-spacing) 0;
+            display: flex;
+            align-items: center;
+            font-family: var(--font-title);
+            font-weight: bold;
+            color: var(--text-lightgray);
+            gap: var(--default-spacing);
+
+
+            &:hover {
+                color: var(--text-white);
+            }
+
+            &.page-nav__next {
+                padding-left: var(--default-spacing);
+            }
+
+            &.page-nav__previous {
+                padding-right: var(--default-spacing);
+            }
+        }
+    }
+
+    &__title {
+        font-size: var(--text-size-lg);
+        font-family: var(--font-title);
+        font-weight: bold;
+        color: #fff;
+        display: block;
+
+        &:visited {
+            color: #fff;
+        }
+
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+
+    &__meta {
+        color: var(--text-lightgray);
+        padding-bottom: var(--default-spacing);
+    }
+
+    &__excerpt {
+        border-left: solid 1rem var(--bg-light);
+        color: var(--text-light);
+        display: block;
+        padding: 0rem 1rem;
+
+        &:visited, &:hover {
+            color: var(--text-light);
+        }
+    }
+}

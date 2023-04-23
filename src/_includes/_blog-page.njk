@@ -2,13 +2,14 @@
 layout: _base.njk
 ---
 
-{% include '_blog-nav.njk' %}
 {% include '_page-callout.njk' %}
 
 <section class="container blog-page">
-    <aside class="blog-page__toc small">
-        <h6>Table Of Contents</h6>
-        {{ content | toc | safe }}
+    <aside>
+        <div class="blog-page__toc">
+            <h6>Table Of Contents</h6>
+            {{ content | toc | safe }}
+        </div>
     </aside>
     <article class="blog-page__content">
         {{ content | safe }}

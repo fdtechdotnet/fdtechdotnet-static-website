@@ -24,11 +24,12 @@
         <![endif]-->
         {% include '_header.njk' %}
         <main>
-            {% include '_page-callout.njk' %}
             <section class="container article-mainpage">
                 <aside class="article-mainpage__toc small">
-                    <h6>Table Of Contents</h6>
-                    {{ content | toc | safe }}
+                    <div>
+                        <h6>Table Of Contents</h6>
+                        {{ content | toc | safe }}
+                    </div>
                 </aside>
                 <article class="article-mainpage__content">
                     {{ content | safe }}

@@ -35,6 +35,11 @@
           "title": "tags",
           "name": "tags",
           "type": "tags"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "datetime"
         }
       ]
     }
@@ -43,17 +48,43 @@
   "frontMatter.preview.host": "http://localhost:8080",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]",
-      "title": "[[workspace]]"
+      "path": "[[workspace]]/src/articles/get-started",
+      "title": "get-started"
     },
     {
-      "path": "[[workspace]]/src/articles/get-started"
+      "title": "articles",
+      "path": "[[workspace]]/src/articles"
+    },
+    {
+      "title": "blog",
+      "path": "[[workspace]]/src/blog"
     }
   ],
   "frontMatter.taxonomy.categories": [
+    "Certification",
     "Featured",
     "General",
     "Get Started",
-    "featured"
+    "Samples"
+  ],
+  "frontMatter.taxonomy.tags": [
+    "blog",
+    "article",
+    "cloud-architecture",
+    "cloud-infrastructure",
+    "development",
+    "devops-practices",
+    "featured",
+    "github",
+    "infrastructure",
+    "microsoft-azure",
+    "operations",
+    "process-automation",
+    "software-delivery",
+    "software-development",
+    "software-development-lifecycle",
+    "software-engineering",
+    "webapp-delivery",
+    "webapp-development"
   ]
 }
