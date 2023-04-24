@@ -34,6 +34,8 @@ pagination:
             </li>
         {% endfor %}
         </ul>
+
+        {% if pagination.href.previous or pagination.href.previous %}
         <nav class="recent-blog__page-nav">
             {% if pagination.href.previous %}
             <a href="{{ pagination.href.previous }}" class="page-nav page-nav__previous">
@@ -49,5 +51,6 @@ pagination:
             </a>
             {%else%}<small>You've reaced the end of the list!</small>{% endif %}
         </nav>
+        {% endif %}
     </article>
 </section>
