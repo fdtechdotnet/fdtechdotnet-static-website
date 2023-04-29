@@ -24,16 +24,16 @@
         <![endif]-->
         {% include '_header.njk' %}
         <main>
-            <section class="container article-mainpage">
-                <aside class="article-mainpage__toc small">
+            <section class="container article-page">
+                <aside class="article-page__toc small">
                     <div>
                         <h6>Table Of Contents</h6>
                         {{ content | toc | safe }}
                     </div>
                 </aside>
-                <article class="article-mainpage__content">
+                <article class="article-page__content">
                     {{ content | safe }}
-                    <nav class="article-mainpage__content-nav">
+                    <nav class="article-page__content-nav">
                         <a href="" class="content-nav content-nav__previous">
                             <i class="fa-solid fa-angles-left fa-2x"></i>
                             <div>

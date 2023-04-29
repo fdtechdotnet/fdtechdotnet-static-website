@@ -1,134 +1,53 @@
 .article-mainpage {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 1rem;
+    padding-bottom: var(--default-spacing);
 
-    @media screen and (max-width:800px) {
-        flex-direction: column;
-        width: calc(100%-var(--default-spacing));
-    }
-
-    h1, h2 {
-        color: var(--text-white);
-        border-top: 5px solid var(--bg-primary);
-        padding-top: var(--two-spacing);
-    }
-
-    &__toc {
-        width: 20rem;
+    & > article {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: var(--default-spacing);
+        color: var(--text-light);
 
         @media screen and (max-width:800px) {
-            width: calc(100% - var(--two-spacing));
-        }
-
-        ul {
-            margin: 0;
-            padding: 0 0 0 1.5rem;
-
-            & > li a {
-                display: block;
-                padding: 0.25rem;
-                color: var(--text-light);
-
-                &:hover {
-                    color: var(--text-white);
-                }
-            }
+            flex-direction: column;
+            width: calc(100%-var(--default-spacing));
         }
     }
 
-    &__content {
+    &__category {
+        background-color: var(--bg-slategray);
+        border-radius: calc(var(--default-spacing)/2);
+        color: var(--text-light) !important;
+        padding: var(--default-spacing);
         flex: 1;
 
-        & > h1:not(:first-child), & > h2:not(:first-child) {
-            margin-top: var(--three-spacing);
+        &:hover {
+            color: #fff !important;
         }
 
-        & > h3 {
-            margin-top: var(--default-spacing);
-            color: var(--text-white);
-            margin-bottom: 0;
-            padding: 1rem 0 0 0;
+        & > * {
+            position: relative;
+            z-index: 1;
         }
 
-        img {
-            width: 100%;
+        & > [class*='fa-'] {
+            font-size: calc(var(--text-size-lg)*2);
+            color: var(--text-lightgray);
+            padding: 0 var(--default-spacing);
+            float: right;
+            z-index: 0;
+        }
+    }
+
+    .category {
+        &__title {
+            font-family: var(--font-title);
+            font-size: var(--text-size-title);
+            font-weight: bold;
+            color: var(--text-primary);
         }
 
-        &-nav {
-            border-top: 5px solid var(--bg-primary);
-            margin-top: var(--three-spacing);
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: space-between;
-            align-items: center;
-
-            > a.content-nav {
-                padding: var(--two-spacing) 0;
-                width: 45%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                align-content: center;
-                align-items: center;
-                color: var(--text-white);
-
-                &:hover {
-                    color: var(--text-primary);
-                }
-
-                .fa-angles-right {
-                    padding-left: var(--default-spacing);
-                }
-
-                .fa-angles-left {
-                    padding-right: var(--default-spacing);
-                }
-
-                div {
-                    line-height: 1;
-                    font-family: var(--font-title);
-
-                    & > p {
-                        font-weight: bold;
-                        color: var(--text-white);
-                        line-height: 1.25;
-                        padding: 0;
-                        margin: 0;
-                    }
-
-                    & > small {
-                        color: var(--text-lightgray);
-                        display: block;
-                        margin-top: 0.25rem;
-
-                        @media screen and (max-width:800px) {
-                            display: none;
-                        }
-                    }
-                }
-            }
-
-            .content-nav__next {
-                justify-content: flex-end;
-
-                > div {
-                    text-align: right;
-                }
-            }
-
-            .content-nav__previous {
-                justify-content: flex-start;
-
-                > div {
-                    text-align: left;
-                }
-            }
-        }
     }
 }

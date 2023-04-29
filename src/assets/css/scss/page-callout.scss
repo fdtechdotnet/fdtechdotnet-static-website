@@ -1,8 +1,12 @@
 .page-callout {
     background-color: var(--bg-primary);
     color: var(--text-white);
-    padding: 3rem 1rem;
-    margin-bottom: 3rem;
+    padding: var(--three-spacing) var(--default-spacing);
+    margin-bottom: var(--three-spacing);
+
+    @media screen and (max-width:800px) {
+        margin-bottom: var(--two-spacing);
+    }
 
     & > .container {
         display: flex;
