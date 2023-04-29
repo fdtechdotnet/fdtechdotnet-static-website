@@ -1,5 +1,5 @@
 {
     "layout": "_blog-page.njk",
-    "permalink": "blog/{{ date | ymdDateFormat }}/{{ title | slugify }}/",
+    "permalink": "blog/{{ title | slugify }}/",
     "tags": ["fdtechdotnet", "blog"]
 }
