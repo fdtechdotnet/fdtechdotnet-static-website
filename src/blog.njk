@@ -1,17 +1,14 @@
 ---
 title: Blog
-description: "Welcome to my blog! Here, I'll share my thoughts and insights on various topics.
-    Join me in exploring new ideas and perspectives through my learning journet and experience working with
-    full-stack web application development delivery inluding software engineering as a whole."
+description: ""
 permalink: /blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
-calloutFontAwesomeIcon: fa-comments
+
 pagination:
     data: collections.blogPosts
     size: 3
     alias: pagedBlogPosts
 ---
 
-{% include '_page-callout.njk' %}
 {% include '_content/recent-blog-posts.njk' %}
 
 {# <section class="container recent-blog">
