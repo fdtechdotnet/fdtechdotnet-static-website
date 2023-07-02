@@ -8,40 +8,66 @@ calloutActionText: "Get Started"
 calloutActionLink: "/articles/get-started"
 ---
 
-{% include '_page-callout.njk' %}
+{# {% include '_page-callout.njk' %} #}
 
-<section class="container articles">
-    <a href="/articles/webapp-development" class="articles__category">
-        <i class="fa-solid fa-code"></i>
-        <span class="category__title">WebApp Development</span>
-        <p class="category__description small">
+<section class="container article-posts">
+    <article class="articles-category">
+        {# <i class="fa-solid fa-code"></i> #}
+        <h3 class="articles-category__title">WebApp Development</h3>
+        <p class="articles-category__description small">
             Familiarize with full-stack web application development by learning
             front-end client and back-end service application development.
         </p>
-        <span class="category__post-count small">
+        <span class="articles-category__post-count small">
             <span>0 Articles</span>
         </span>
-    </a>
-    <a href="/articles/devops-practices" class="articles__category">
-        <i class="fa-solid fa-infinity"></i>
-        <span class="category__title">DevOps Practices</span>
-        <p class="category__description small">
+    </article>
+    <article class="articles-category">
+        {# <i class="fa-solid fa-infinity"></i> #}
+        <h3 class="articles-category__title">DevOps Practices</h3>
+        <p class="articles-category__description small">
             Start implementing build, test, deployment with automations and
             known practices between development and operations.
         </p>
-        <span class="category__post-count small">
+        <span class="articles-category__post-count small">
             <span>0 Articles</span>
         </span>
-    </a>
-    <a href="/articles/cloud-infrastructure" class="articles__category">
-        <i class="fa-solid fa-cloud"></i>
-        <span class="category__title">Cloud Infrastructure</span>
-        <p class="category__description small">
+    </article>
+    <article class="articles-category">
+        {# <i class="fa-solid fa-cloud"></i> #}
+        <h3 class="articles-category__title">Cloud Infrastructure</h3>
+        <p class="articles-category__description small">
             Explore and familiarize with cloud services by learning to orchestrate Infrastructure
             suited for your needs.
         </p>
-        <span class="category__post-count small">
+        <span class="articles-category__post-count small">
             <span>0 Articles</span>
         </span>
-    </a>
+    </article>
+</section>
+
+<section class="container blog-posts">
+    <h5 class="blog-posts__title">Recent Blog</h5>
+    <div class="blog-posts__entries">
+        <div class="recent-blogposts">
+            {% for post in collections.blogPosts | take(5) | sort(false, false, date) %}
+                <article class="recent-blogposts__entry">
+                    <a href="{{ post.url }}" class="recent-blogposts__entry-title">{{ post.data.title }}</a>
+                    <div class="recent-blogposts__entry-meta small">Published on {{ post.data.date | postDate }}</div>
+                    <a href="{{ post.url }}" class="recent-blogposts__entry-excerpt">
+                        {{ post.templateContent | excerpt }}
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+        <div class="blogposts-categories">
+            <h5 class="blogposts-categories__title">Categories</h5>
+            <ul class="blogposts-categories__list">
+            {% for category in collections.blogByCategory %}
+                <li>{{ category[0] }}</li>
+                {# <li>{{ category[0] }} ({{ category[1].length }})</li> #}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 </section>
