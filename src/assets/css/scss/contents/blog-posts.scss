@@ -1,5 +1,4 @@
 .blog-posts{
-    padding: var(--two-spacing) 0;
 
     &__title {
         color: var(--text-dimgray);
@@ -10,6 +9,10 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: var(--five-spacing);
+
+        @media screen and (max-width:800px) {
+            grid-template-columns: 1fr;
+        }
 
         .recent-blogposts {
             display: flex;
@@ -40,11 +43,20 @@
                 }
 
                 &-excerpt {
+                    line-height: 1.5;
                     color: var(--text-light);
                     display: block;
 
-                    &:visited, &:hover {
-                        color: var(--text-white);
+                    @media screen and (max-width:800px) {
+                        font-size: var(--text-size-default);
+                    }
+
+                    &:visited {
+                        color: var(--text-light);
+                    }
+
+                    &:hover {
+                        color: #fff;
                     }
                 }
             }
@@ -53,6 +65,10 @@
         .blogposts-categories {
             padding: var(--default-spacing) var(--two-spacing);
             border-left: solid 2px var(--bg-slategray);
+
+            @media screen and (max-width:800px) {
+                display: none;
+            }
 
             &__title {
                 text-transform: uppercase;

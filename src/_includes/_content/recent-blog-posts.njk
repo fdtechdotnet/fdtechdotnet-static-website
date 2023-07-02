@@ -1,6 +1,6 @@
-<section class="container blog-posts">
-    <h5 class="blog-posts__title">Recent Blog</h5>
-    <div class="blog-posts__entries">
+<section class="blog-posts">
+    <h5 class="container blog-posts__title">Recent Blog</h5>
+    <div class="container blog-posts__entries">
         <div class="recent-blogposts">
             {% for post in collections.blogPosts | take(5) | sort(false, false, date) %}
                 <article class="recent-blogposts__entry">

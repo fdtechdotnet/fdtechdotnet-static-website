@@ -1,7 +1,6 @@
 main {
     margin: var(--two-spacing) 0;
-
-    @media screen and (max-width:800px) {
-        margin-bottom: var(--two-spacing);
-    }
+    display: flex;
+    flex-direction: column;
+    gap: var(--two-spacing);
 }
