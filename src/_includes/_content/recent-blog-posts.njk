@@ -1,0 +1,25 @@
+<section class="container blog-posts">
+    <h5 class="blog-posts__title">Recent Blog</h5>
+    <div class="blog-posts__entries">
+        <div class="recent-blogposts">
+            {% for post in collections.blogPosts | take(5) | sort(false, false, date) %}
+                <article class="recent-blogposts__entry">
+                    <a href="{{ post.url }}" class="recent-blogposts__entry-title">{{ post.data.title }}</a>
+                    <div class="recent-blogposts__entry-meta small">Published on {{ post.data.date | postDate }}</div>
+                    <a href="{{ post.url }}" class="recent-blogposts__entry-excerpt">
+                        {{ post.templateContent | excerpt }}
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+        <div class="blogposts-categories">
+            <h5 class="blogposts-categories__title">Categories</h5>
+            <ul class="blogposts-categories__list">
+            {% for category in collections.blogByCategory %}
+                <li>{{ category[0] }}</li>
+                {# <li>{{ category[0] }} ({{ category[1].length }})</li> #}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
