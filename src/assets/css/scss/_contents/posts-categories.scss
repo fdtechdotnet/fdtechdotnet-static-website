@@ -1,4 +1,4 @@
-.article-posts {
+.posts-categories {
 
     & > .container {
         display: grid;
@@ -11,7 +11,7 @@
             gap: var(--default-spacing);
         }
 
-        .articles-category {
+        .posts-category {
             background-color: var(--bg-slategray);
             border-top: solid 5px var(--bg-primary);
             padding: var(--two-spacing);

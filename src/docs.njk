@@ -1,0 +1,37 @@
+---
+title: Documentations
+description: ""
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header__title">{{ title }}</h1>
+        <small>{{ description }}</small>
+    </div>
+</section>
+
+{% include '_content/docs-categories.njk' %}
+{% include '_content/recent-docs.njk' %}
+
+{# <section class="container page-content">
+    <aside>
+        <div class="page-content__toc">
+            <h6>Jump to:</h6>
+            <ul>
+            {% for post in collections.documentations | sortedCollection %}
+                <li class="page-content__content-anchor">
+                    <a href="#{{ post.data.title | slugify }}"> {{ post.data.title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="page-content__content">
+        {% for post in collections.documentations | sortedCollection %}
+            <article class="page-content__content-entry">
+                <h2>{{ post.data.title }}<a id="{{ post.data.title | slugify }}"> » </a></h2>
+                {{ post.templateContent | safe | excerpt }}
+            </article>
+        {% endfor %}
+    </div>
+</section> #}

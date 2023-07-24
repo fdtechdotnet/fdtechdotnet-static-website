@@ -1,4 +1,4 @@
-.blog-posts{
+.recent-posts {
 
     &__title {
         color: var(--text-dimgray);
@@ -14,7 +14,7 @@
             grid-template-columns: 1fr;
         }
 
-        .recent-blogposts {
+        .entry-posts {
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -23,7 +23,7 @@
             gap: var(--two-spacing);
             padding-top: var(--default-spacing);
 
-            &__entry {
+            &__item {
 
                 &-title {
                     color: var(--text-primary);
@@ -62,7 +62,7 @@
             }
         }
 
-        .blogposts-categories {
+        .posts-categories {
             padding: var(--default-spacing) var(--two-spacing);
             border-left: solid 2px var(--bg-slategray);
 
@@ -75,7 +75,7 @@
             }
 
             &__list > li {
-                line-height: 2;
+                line-height: var(--text-lineheight);
             }
         }
     }

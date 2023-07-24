@@ -1,0 +1,33 @@
+---
+layout: _base.njk
+---
+
+<section class="article-header">
+    <div class="container">
+        <small class="article-breadcrumb">
+            <ul>
+                <li class="article-breadcrumb__item">
+                    <a href="/docs">Documentations</a>
+                </li>
+                <li class="article-breadcrumb__divider">
+                    <i class="fa-solid fa-angles-right"></i>
+                </li>
+                <li class="article-breadcrumb__item">{{ categories }}</li>
+            </ul>
+        </small>
+        <h1 class="article-header__title">{{ title }}</h1>
+        <small>Published on {{ date | localeDate }}</small>
+    </div>
+</section>
+
+<section class="container article-entry">
+    <aside>
+        <div class="article-entry__toc">
+            <h6>Table Of Contents</h6>
+            {{ content | toc | safe }}
+        </div>
+    </aside>
+    <article class="article-entry__content">
+        {{ content | safe }}
+    </article>
+</section>

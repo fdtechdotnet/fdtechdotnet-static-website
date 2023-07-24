@@ -1,58 +1,92 @@
 ---
-title: About
+title: "About Who, What, and All Significant Details"
+description: ""
 ---
 
-{% include '_page-callout.njk' %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header__title">{{ title }}</h1>
+        <small>{{ description }}</small>
+    </div>
+</section>
 
-<div class="container">
-    <section>
-        <article>
-            <h2>Fullstack-dev Technology</h2>
-            <small>Tagline:</small>
-            <blockquote>"Learn. Experience. Improve."</blockquote>
-            <p>
-                A portfolio website that aims to empower individuals to learn from their experiences and continuously improve
-                themselves, both personally and professionally. Individuals can unlock their full potential and achieve their goals
-                by committing to ongoing learning and being willing to embrace new experiences.
-                This page strives to inspire and support this journey of self-discovery and growth.
-            </p>
-            <p>
-                The `<strong>fdtechdotnet</strong>` is the shorthand handle name of this page derived from the pursuit of learning and
-                using .NET technologies in terms of full-stack web application development and delivery using cloud services
-                for infrastructure.
-            </p>
+<section class="container page-content">
+    <aside>
+        <div class="page-content__toc">
+            <h6>Jump to:</h6>
+            <ul>
+            {% for post in collections.aboutpage | sortedCollection %}
+                <li class="page-content__content-anchor">
+                    <a href="#{{ post.data.title | slugify }}"> {{ post.data.title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="page-content__content">
+        <article class="author-info">
+            <div class="author-info__card">
+                <img src="{{ authorThumbnail }}" alt="" class="author-info__card-img">
+                <div class="author-info__card-name">
+                    <h2 >{{ author }}</h2>
+                    <small>{{ authorTitle }}</small>
+                </div>
+                <ul class="author-info__card-socialmedia">
+                    <li>
+                        <a href="{{linkedinProfile}}" target="_blank">
+                            <span class="fa-stack fa-xl">
+                                <i class="fa-solid fa-square fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ githubProfile }}" target="_blank">
+                            <span class="fa-stack fa-xl">
+                                <i class="fa-solid fa-square fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Author's introduction message:</p>
+            <blockquote class="author-info__summary">
+                <p >
+                    "Learn. Experience. Improve." - Every learning opportunity and learning itself leads to exposure and experience. Even the experience
+                    itself is a learning opportunity. Relative experience and available opportunities lead to potential
+                    improvement. That is my cycle for continuous improvement.
+                </p>
+                <p>
+                    I am a learning enthusiast who is professionally interested in full-stack web application development and
+                    delivery with cloud infrastructure. I have been using the .NET platform and ecosystem since I
+                    started my professional journey and engaged with...
+                </p>
+                <ul>
+                    <li>ASP.NET Core Development - MVC and Web API</li>
+                    <li>DevOps Engineering with Azure DevOps and Microsoft Azure</li>
+                    <li>Full-stack Web Application Development and Delivery</li>
+                    <li>Leading a small Feature Development for Web Applications</li>
+                    <li>Production Support for .NET enterprise business applications</li>
+                </ul>
+                <p>
+                    Other than the .NET stack of technologies, I am also keen to learn more about modern JavaScript frameworks
+                    and am currently engaged with development using Angular. For other frameworks, I still have a lot of room
+                    for improvement and uncharted areas to cover in terms of development standards and best practices.
+                </p>
+                <p>
+                    Outside of work, I am working on personal web application projects aside from spending time for
+                    personal development and passing time for hobbies. I like watching MMA fights in One Championship to
+                    root for Filipino fighter athletes, and I am currently into mountain biking as a workout routine or to
+                    unwind and feel some adrenaline.
+                </p>
+            </blockquote>
         </article>
-        <article>
-            <h2>Disclaimer</h2>
-            <p>
-                The website primarily serves as Author's learning journal and experience log about using various technologies
-                for web application development and delivery, aiming to provide insights and perspective to the readers.
-                Initial contents will focus on the .NET technology stack and ecosystem, which subsequently include
-                other technology stacks available to integrate with .NET-based applications or
-                independent technology stacks and applications.
-            </p>
-            <p>
-                The information provided on this website is for general informational purposes only.
-                While we strive to provide accurate and up-to-date information, we make no representations or warranties of
-                any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with
-                respect to the website or the information, products, services, or related graphics contained on the website for
-                any purpose. Any reliance you place on such information is therefore strictly at your own risk.
-            <p>
-            </p>
-                In no event will we be liable for any loss or damage including without limitation, indirect or
-                consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
-                profits arising out of, or in connection with, the use of this website.
-            <p>
-            </p>
-                Through this website you are able to link to other websites which are not under our control. We have no control
-                over the nature, content and availability of those sites. The inclusion of any links does not necessarily
-                imply a recommendation or endorse the views expressed within them.
-            <p>
-            </p>
-                Every effort is made to keep the website up and running smoothly. However, we take no responsibility for,
-                and will not be liable for, the website being temporarily unavailable due to
-                technical issues beyond our control.
-            </p>
-        </article>
-   </section>
-</div>
+        {% for post in collections.aboutpage | sortedCollection %}
+            <article class="page-content__content-entry">
+                <h2>{{ post.data.title }}<a id="{{ post.data.title | slugify }}"> » </a></h2>
+                {{ post.templateContent | safe }}
+            </article>
+        {% endfor %}
+    </div>
+</section>

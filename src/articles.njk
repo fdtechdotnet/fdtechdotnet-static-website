@@ -1,38 +1,57 @@
 ---
 title: Articles
 description: ""
+permalink: /articles/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
+
+pagination:
+    data: collections.publishedPosts
+    size: 3
+    alias: pagedPublishedPosts
 ---
 
-{% include '_content/recent-article-posts.njk' %}
+{% include '_content/articles-categories.njk' %}
+{# {% include '_content/recent-articles.njk' %} #}
 
-{# <section class="container article-mainpage">
-    <article>
-        <a href="/articles/webapp-development" class="article-mainpage__category">
-            <i class="fa-solid fa-code"></i>
-            <span class="category__title">WebApp Development</span>
-            <p class="category__description small">
-                Familiarize with full-stack web application development by learning
-                front-end client and back-end service application development.
-            </p>
-            <span class="category__post-count small">Posted Article: 0</span>
-        </a>
-        <a href="/articles/devops-practices" class="article-mainpage__category">
-            <i class="fa-solid fa-infinity"></i>
-            <span class="category__title">DevOps Practices</span>
-            <p class="category__description small">
-                Start implementing build, test, deployment with automations and
-                known practices between development and operations.
-            </p>
-            <span class="category__post-count small">Posted Article: 0</span>
-        </a>
-        <a href="/articles/cloud-infrastructure" class="article-mainpage__category">
-            <i class="fa-solid fa-cloud"></i>
-            <span class="category__title">Cloud Infrastructure</span>
-            <p class="category__description small">
-                Explore and familiarize with cloud services by learning to orchestrate Infrastructure
-                suited for your needs.
-            </p>
-            <span class="category__post-count small">Posted Article: 0</span>
-        </a>
+{# <section class="container recent-post">
+    <aside  class="recent-post__sidebar">
+        <div class="recent-post__categories">
+            <h6>Categories</h6>
+            <ul>
+            {% for category in collections.postByCategory %}
+                <li>{{ category[0] }} ({{ category[1].length }})</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <article class="recent-post__list">
+        <ul>
+        {% for post in pagedPublishedPosts | sort(false, false, date) %}
+            <li>
+                <a href="{{ post.url }}" class="recent-post__title">{{ post.data.title }}</a>
+                <div class="recent-post__meta small">Published on {{ post.data.date | localeDate }}</div>
+                <a href="{{ post.url }}" class="recent-post__excerpt">
+                    {{ post.templateContent | excerpt }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+        {% if pagination.href.previous or pagination.href.previous %}
+        <nav class="recent-post__page-nav">
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" class="page-nav page-nav__previous">
+                <i class="fa-solid fa-angles-left fa-2x"></i>
+                <span>PREVIOUS</span>
+            </a>
+            {%else%}<small>Click 'Next' for more recent posts...</small>{% endif %}
+
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" class="page-nav page-nav__next">
+                <span>NEXT</span>
+                <i class="fa-solid fa-angles-right fa-2x"></i>
+            </a>
+            {%else%}<small>You've reaced the end of the list!</small>{% endif %}
+        </nav>
+        {% endif %}
     </article>
 </section> #}

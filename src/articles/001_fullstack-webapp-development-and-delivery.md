@@ -1,5 +1,5 @@
 ---
-title: "Learning Full-stack WebApp Development and Delivery"
+title: "Full-stack WebApp Development and Delivery: The What and How"
 description: ""
 date: 2023-07-09T15:45:19.296Z
 lastDateUpdated: 2023-07-09T15:45:19.296Z

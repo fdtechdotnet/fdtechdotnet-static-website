@@ -48,16 +48,8 @@
   "frontMatter.preview.host": "http://localhost:8080",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]/src/articles/get-started",
-      "title": "get-started"
-    },
-    {
       "title": "articles",
       "path": "[[workspace]]/src/articles"
-    },
-    {
-      "title": "blog",
-      "path": "[[workspace]]/src/blog"
     }
   ],
   "frontMatter.taxonomy.categories": [
@@ -69,7 +61,6 @@
     "Website Updates"
   ],
   "frontMatter.taxonomy.tags": [
-    "blog",
     "article",
     "cloud-architecture",
     "cloud-infrastructure",

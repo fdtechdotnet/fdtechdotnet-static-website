@@ -1,6 +1,0 @@
-{
-    "layout": "_article-page.njk",
-    "permalink": "articles/get-started/{{ title | slugify }}/",
-    "categories": ["Get Started"],
-    "tags": ["fdtechdotnet", "post", "article", "article-page"]
-}

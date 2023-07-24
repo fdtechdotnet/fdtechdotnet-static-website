@@ -16,7 +16,7 @@ nav, header, main, footer, section, article, .container {
 }
 
 article, p {
-    line-height: 1.75rem;
+    line-height: var(--text-lineheight);
 }
 
 hr {

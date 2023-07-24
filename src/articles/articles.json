@@ -1,4 +1,5 @@
 {
-    "layout": "_base.njk",
-    "tags": ["fdtechdotnet", "post", "article", "article-category-page"]
+    "layout": "article-page.njk",
+    "permalink": "articles/{{ title | slugify }}/",
+    "tags": ["article-post"]
 }

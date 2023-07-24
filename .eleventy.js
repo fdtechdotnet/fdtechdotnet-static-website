@@ -8,24 +8,24 @@ const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(config) {
     config.setUseGitIgnore(true);
-
-    // Pass Through
     config.addPassthroughCopy("./src/assets/css/**/*.min.css");
     config.addPassthroughCopy("./src/assets/js/**/*.min.js");
     config.addPassthroughCopy("./src/assets/img/**/*");
     config.addPassthroughCopy("./src/assets/svg/**/*");
 
-    // Short Codes
+    /* =========================  Short Codes ======================== */
     config.addShortcode("dateToday", () => `${new Date().toLocaleString(DateTime.DATE_HUGE)}`);
     config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
-    // Custom Filters
+    /* =========================  Custom Filters ======================== */
     config.addNunjucksFilter("take", (collection, count) => collection.slice(0, count || 10));
-    config.addNunjucksFilter("postDate", (dateObject) => {
+
+    config.addNunjucksFilter("localeDate", (dateObject) => {
         return DateTime
             .fromJSDate(dateObject)
             .toLocaleString(DateTime.DATE_HUGE);
     });
+
     config.addFilter("ymdDateFormat", (date) => {
         // Create a new Date object from the input date string
         var inputDate = new Date(date);
@@ -38,10 +38,12 @@ module.exports = function(config) {
         // Return the date string in the "YYYY/MM/DD" format
         return year + "/" + month + "/" + day;
       });
+
     config.addFilter("excerpt", (post) => {
         const content = post.replace(/(<([^>]+)>)/gi, "");
         return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
     });
+
     config.addFilter("slugify", (str) => {
         if (!str) { return; }
         return slugify(str, {
@@ -51,8 +53,17 @@ module.exports = function(config) {
         });
     });
 
-    // Article config
-    config.addCollection("articlesByCategory", (collection) => {
+    config.addNunjucksFilter("sortedCollection", (collection) => collection.sort());
+
+    /* =========================  Articles Config ======================== */
+    config.addCollection("publishedPosts", (collection) => { return _
+        .chain(collection.getAllSorted())
+        .filter((post) => post.url && post.inputPath.startsWith('./src/articles/')  && !post.data.draft)
+        .reverse()
+        .value();
+    });
+
+    config.addCollection("postsByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
             .filter((post) => post.url && post.inputPath.startsWith('./src/articles/') && !post.data.draft)
@@ -62,24 +73,7 @@ module.exports = function(config) {
             .value();
     });
 
-    // Blog config
-    config.addCollection("blogPosts", (collection) => { return _
-        .chain(collection.getAllSorted())
-        .filter((post) => post.url && post.inputPath.startsWith('./src/blog/')  && !post.data.draft)
-        .reverse()
-        .value();
-    });
-    config.addCollection("blogByCategory", (collection) => {
-        return _
-            .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/blog/')  && !post.data.draft)
-            .groupBy((post) => post.data.categories)
-            .toPairs()
-            .reverse()
-            .value();
-    });
-
-    // Anchor
+    /* =========================  Markdown Overrides ======================== */
     const markdownItAnchorOptions = {
         level: [1, 2, 3],
         slugify: (str) => slugify(str, {
@@ -89,18 +83,19 @@ module.exports = function(config) {
         })
     };
 
-    /* Markdown Overrides */
-    let markdownLibrary = markdownIt().use(markdownItAnchor, markdownItAnchorOptions);
     // This is the part that tells 11ty to swap to our custom config
+    let markdownLibrary = markdownIt().use(markdownItAnchor, markdownItAnchorOptions);
+
     config.setLibrary("md", markdownLibrary);
 
-    // Plugins
+    /* =========================  Plugins ======================== */
     config.addPlugin(pluginTOC, {
         tags: ['h1', 'h2', 'h3'],
         wrapper: 'nav',
         ul: true,
         flat: false
     });
+
     config.addPlugin(pluginMermaid);
 
     return {
