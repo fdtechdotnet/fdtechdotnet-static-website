@@ -1,11 +1,11 @@
 ---
 title: "Fullstack-dev Technology: Learning Target and Scope"
 description: An insight and perspective about the specifics of the learning target and scope in full-stack web application development and delivery with cloud infrastructure
-featuredImage: "svg/learning-target-and-scope.drawio.svg"
+featuredImage: svg/learning-target-and-scope.drawio.svg
 featuredImageCaption: Learning Target and Scope
 date: 2023-07-09T15:45:19.296Z
 lastDateUpdated: 2023-08-04T18:11:25.504Z
-category: General
+categories: []
 subcategories:
   - Perspective
   - Insight

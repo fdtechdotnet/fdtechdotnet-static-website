@@ -55,10 +55,10 @@ module.exports = function(config) {
 
     config.addNunjucksFilter("sortedCollection", (collection) => collection.sort());
 
-    /* =========================  Articles Config ======================== */
+    /* =========================  Documentations Config ======================== */
     config.addCollection("publishedPosts", (collection) => { return _
         .chain(collection.getAllSorted())
-        .filter((post) => post.url && post.inputPath.startsWith('./src/articles/')  && !post.data.draft)
+        .filter((post) => post.url && post.inputPath.startsWith('./src/docs/')  && !post.data.draft)
         .reverse()
         .value();
     });
@@ -66,7 +66,7 @@ module.exports = function(config) {
     config.addCollection("postsByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/articles/') && !post.data.draft)
+            .filter((post) => post.url && post.inputPath.startsWith('./src/docs/') && !post.data.draft)
             .groupBy((post) => post.data.categories)
             .toPairs()
             .reverse()

@@ -1,0 +1,10 @@
+{
+    "layout": "docs-page.njk",
+    "permalink": "docs/general/{{ title | slugify }}/",
+    "categories": [
+        "WebApp Development",
+        "DevOps Practices",
+        "Cloud Infrastructure"
+    ],
+    "tags": ["documentation"]
+}

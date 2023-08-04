@@ -1,6 +1,0 @@
-{
-    "layout": "docs-page.njk",
-    "permalink": "docs/get-started/{{ title | slugify }}/",
-    "categories": ["Get Started"],
-    "tags": ["documentations"]
-}
