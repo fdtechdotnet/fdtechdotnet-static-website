@@ -1,4 +1,4 @@
-.article-header {
+.docs-header {
     background-color: var(--bg-primary);
     color: var(--text-white);
     padding: var(--two-spacing) var(--default-spacing);
@@ -14,7 +14,7 @@
         }
     }
 
-    .article-breadcrumb {
+    .docs-breadcrumb {
         text-transform: uppercase;
         font-family: var(--font-body);
         font-weight: bold;
@@ -24,7 +24,7 @@
         ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 0 0 var(--default-spacing) 0;
             display: flex;
             align-items: center;
             flex-wrap: nowrap;
@@ -46,7 +46,7 @@
     }
 }
 
-.article-entry {
+.docs-entry {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -58,17 +58,6 @@
         flex-direction: column;
         gap: var(--default-spacing);
         width: calc(100%-var(--default-spacing));
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--text-white);
-        text-transform: capitalize;
-    }
-
-    h1 {
-        border-top: 5px solid var(--bg-primary);
-        padding-top: var(--default-spacing);
-        display: block;
     }
 
 
@@ -107,16 +96,35 @@
     &__content {
         flex: 1;
 
-        // & > h1:not(:first-child), & > h2:not(:first-child) {
-        //     margin-top: var(--three-spacing);
-        // }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-white);
+            text-transform: capitalize;
+            margin-top: var(--two-spacing);
+            font-weight: bold;
+        }
 
-        // & > h3 {
-        //     margin-top: var(--default-spacing);
-        //     color: var(--text-white);
-        //     margin-bottom: 0;
-        //     padding: 1rem 0 0 0;
-        // }
+        h1, h2 {
+            border-top: 5px solid var(--bg-primary);
+            padding-top: var(--two-spacing);
+            margin-top: var(--three-spacing);
+            display: block;
+        }
+
+        &-featured-image {
+            background-color: var(--bg-dark);
+            border-radius: 3px;
+            padding: var(--default-spacing) var(--two-spacing);
+            margin: 0 0 var(--default-spacing) 0;
+
+            > img {
+                width: 100%;
+            }
+
+            > figcaption {
+                font-size: small;
+                font-weight: bold;
+            }
+        }
 
         img {
             width: 100%;

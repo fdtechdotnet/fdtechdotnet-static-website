@@ -1,37 +1,57 @@
 ---
 title: Documentations
 description: ""
+permalink: /docs/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
+
+pagination:
+    data: collections.publishedPosts
+    size: 3
+    alias: pagedPublishedPosts
 ---
 
-<section class="page-header">
-    <div class="container">
-        <h1 class="page-header__title">{{ title }}</h1>
-        <small>{{ description }}</small>
-    </div>
-</section>
-
 {% include '_content/docs-categories.njk' %}
-{% include '_content/recent-docs.njk' %}
+{# {% include '_content/recent-docs.njk' %} #}
 
-{# <section class="container page-content">
-    <aside>
-        <div class="page-content__toc">
-            <h6>Jump to:</h6>
+{# <section class="container recent-post">
+    <aside  class="recent-post__sidebar">
+        <div class="recent-post__categories">
+            <h6>Categories</h6>
             <ul>
-            {% for post in collections.documentations | sortedCollection %}
-                <li class="page-content__content-anchor">
-                    <a href="#{{ post.data.title | slugify }}"> {{ post.data.title }}</a>
-                </li>
+            {% for category in collections.postByCategory %}
+                <li>{{ category[0] }} ({{ category[1].length }})</li>
             {% endfor %}
             </ul>
         </div>
     </aside>
-    <div class="page-content__content">
-        {% for post in collections.documentations | sortedCollection %}
-            <article class="page-content__content-entry">
-                <h2>{{ post.data.title }}<a id="{{ post.data.title | slugify }}"> » </a></h2>
-                {{ post.templateContent | safe | excerpt }}
-            </article>
+    <article class="recent-post__list">
+        <ul>
+        {% for post in pagedPublishedPosts | sort(false, false, date) %}
+            <li>
+                <a href="{{ post.url }}" class="recent-post__title">{{ post.data.title }}</a>
+                <div class="recent-post__meta small">Published on {{ post.data.date | localeDate }}</div>
+                <a href="{{ post.url }}" class="recent-post__excerpt">
+                    {{ post.templateContent | excerpt }}
+                </a>
+            </li>
         {% endfor %}
-    </div>
+        </ul>
+
+        {% if pagination.href.previous or pagination.href.previous %}
+        <nav class="recent-post__page-nav">
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" class="page-nav page-nav__previous">
+                <i class="fa-solid fa-angles-left fa-2x"></i>
+                <span>PREVIOUS</span>
+            </a>
+            {%else%}<small>Click 'Next' for more recent posts...</small>{% endif %}
+
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" class="page-nav page-nav__next">
+                <span>NEXT</span>
+                <i class="fa-solid fa-angles-right fa-2x"></i>
+            </a>
+            {%else%}<small>You've reaced the end of the list!</small>{% endif %}
+        </nav>
+        {% endif %}
+    </article>
 </section> #}

@@ -40,18 +40,37 @@
           "title": "draft",
           "name": "draft",
           "type": "datetime"
+        },
+        {
+          "title": "featuredImage",
+          "name": "featuredImage",
+          "type": "image"
+        },
+        {
+          "title": "featuredImageCaption",
+          "name": "featuredImageCaption",
+          "type": "image"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "categories"
+        },
+        {
+          "title": "subcategories",
+          "name": "subcategories",
+          "type": "choice",
+          "choices": [
+            "Perspective",
+            "Insight"
+          ]
         }
       ]
     }
   ],
   "frontMatter.framework.id": "11ty",
   "frontMatter.preview.host": "http://localhost:8080",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "articles",
-      "path": "[[workspace]]/src/articles"
-    }
-  ],
+  "frontMatter.content.pageFolders": [],
   "frontMatter.taxonomy.categories": [
     "Certification",
     "Featured",

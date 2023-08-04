@@ -1,0 +1,5 @@
+{
+    "layout": "docs-page.njk",
+    "permalink": "docs/{{ title | slugify }}/",
+    "tags": ["documentation"]
+}
