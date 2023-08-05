@@ -113,8 +113,12 @@
         &-featured-image {
             background-color: var(--bg-dark);
             border-radius: 3px;
-            padding: var(--default-spacing) var(--two-spacing);
+            padding: 0 var(--default-spacing);
             margin: 0 0 var(--default-spacing) 0;
+
+            @media screen and (max-width:450px) {
+                padding: 0 var(--default-spacing);
+            }
 
             > img {
                 width: 100%;
@@ -130,10 +134,12 @@
             width: 100%;
         }
 
-        & > .giscus {
-            border-top: 5px solid var(--bg-primary);
-            margin-top: var(--two-spacing);
-            padding-top: var(--two-spacing);
+        .giscus-area {
+            .giscus {
+                border-top: 5px solid var(--bg-primary);
+                margin-top: var(--default-spacing);
+                padding-top: var(--three-spacing);
+            }
         }
     }
 }

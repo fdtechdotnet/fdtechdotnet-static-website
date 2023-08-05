@@ -12,6 +12,7 @@ module.exports = function(config) {
     config.addPassthroughCopy("./src/_assets/js/**/*.min.js");
     config.addPassthroughCopy("./src/_assets/img/**/*");
     config.addPassthroughCopy("./src/_assets/svg/**/*");
+    config.addPassthroughCopy("./src/**/images/**/*");
 
     /* =========================  Short Codes ======================== */
     config.addShortcode("dateToday", () => `${new Date().toLocaleString(DateTime.DATE_HUGE)}`);
@@ -39,9 +40,9 @@ module.exports = function(config) {
         return year + "/" + month + "/" + day;
       });
 
-    config.addFilter("excerpt", (post) => {
-        const content = post.replace(/(<([^>]+)>)/gi, "");
-        return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
+    config.addFilter("excerpt", (doc) => {
+        const content = doc.replace(/(<([^>]+)>)/gi, "");
+        return content.substr(0, content.lastIndexOf(" ", 350)) + "...";
     });
 
     config.addFilter("slugify", (str) => {
@@ -54,20 +55,54 @@ module.exports = function(config) {
     });
 
     config.addNunjucksFilter("sortedCollection", (collection) => collection.sort());
+    config.addNunjucksFilter("sortedCollectionByDateAsc", (collection) => {
+        return collection.sort(function(a, b) {
+            return a.date - b.date; // sort by date - ascending
+          });
+    });
+    config.addNunjucksFilter("sortedCollectionByDateDesc", (collection) => {
+        return collection.sort(function(a, b) {
+            return b.date - a.date; // sort by date - descending
+          });
+    });
+    config.addNunjucksFilter("sortedCollectionByFilenameAsc", (collection) => {
+        return collection.sort(function(a, b) {
+            return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
+          });
+    });
+    config.addNunjucksFilter("sortedCollectionByFilenameDesc", (collection) => {
+        return collection.sort(function(a, b) {
+            return b.inputPath.localeCompare(a.inputPath); // sort by path - descending
+          });
+    });
 
     /* =========================  Documentations Config ======================== */
-    config.addCollection("publishedPosts", (collection) => { return _
+    config.addCollection("publishedDocs", (collection) => { return _
         .chain(collection.getAllSorted())
-        .filter((post) => post.url && post.inputPath.startsWith('./src/docs/')  && !post.data.draft)
+        .filter((doc) => doc.url && doc.inputPath.startsWith('./src/docs/')  && !doc.data.draft)
         .reverse()
         .value();
     });
 
-    config.addCollection("postsByCategory", (collection) => {
+    config.addCollection("docsByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((post) => post.url && post.inputPath.startsWith('./src/docs/') && !post.data.draft)
-            .groupBy((post) => post.data.categories)
+            .filter((doc) => doc.url && doc.inputPath.startsWith('./src/docs/') && !doc.data.draft && doc.data.categories)
+            .groupBy((doc) => doc.data.categories)
+            .toPairs()
+            .reverse()
+            .value();
+    });
+
+    config.addCollection("docsBySubcategory", (collection) => {
+        return _
+            .chain(collection.getAllSorted())
+            .filter(
+                (doc) => doc.url && doc.inputPath.startsWith('./src/docs/')
+                        && !doc.data.draft
+                        && doc.data.subcategories
+            )
+            .groupBy((doc) => doc.data.subcategories)
             .toPairs()
             .reverse()
             .value();

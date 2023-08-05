@@ -22,7 +22,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     gap: var(--three-spacing);
-    width: 100%;
+    width: calc(100%-var(--three-spacing));
 
     @media screen and (max-width:800px) {
         flex-direction: column;
@@ -40,7 +40,6 @@
         padding-top: var(--default-spacing);
         display: block;
     }
-
 
     &__toc {
         padding: var(--default-spacing);
@@ -77,57 +76,7 @@
     &__content {
         flex: 1;
 
-        .author-info {
-
-            &__card {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-content: center;
-                justify-content: flex-start;
-                align-items: center;
-                gap: var(--default-spacing);
-
-                &-img {
-                    width: 5rem;
-                    height: 5rem;
-                    border-radius: 50%;
-                }
-
-                &-name {
-                    flex: 1;
-
-                    h2 {
-                        font-weight: bold;
-                        padding: 0;
-                        margin: 0;
-                    }
-                }
-
-                &-socialmedia {
-                    padding: var(--default-spacing) 0;
-                    margin: 0;
-                    list-style-type: none;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    align-content: center;
-                    justify-content: flex-start;
-                    align-items: center;
-
-                    & a, a:hover, a:visited {
-                        color: var(--text-primary);
-                    }
-                }
-
-            }
-
-            &__summary {
-                font-size: var(--text-size-default);
-                font-weight: normal;
-            }
-        }
-
-        &-entry {
+        &-entry:not(:first-child) {
             margin-top: var(--three-spacing);
         }
 

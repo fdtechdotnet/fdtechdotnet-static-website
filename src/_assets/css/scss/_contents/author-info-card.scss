@@ -1,0 +1,35 @@
+.author-info {
+    margin: var(--default-spacing) 0;
+
+    &__card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--default-spacing);
+
+        &-img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+        }
+
+        &-name {
+            flex: 1;
+
+            h2 {
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+    }
+
+    &__summary {
+        font-size: var(--text-size-default);
+        font-weight: normal;
+    }
+}

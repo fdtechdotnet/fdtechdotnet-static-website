@@ -7,39 +7,41 @@
       "previewPath": null,
       "fields": [
         {
-          "title": "title",
+          "title": "Title",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "description",
+          "title": "Description",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "date",
+          "title": "Publishing date",
           "name": "date",
-          "type": "datetime"
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
         },
         {
-          "title": "lastDateUpdated",
-          "name": "lastDateUpdated",
-          "type": "datetime"
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
         },
         {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
         },
         {
-          "title": "tags",
+          "title": "Tags",
           "name": "tags",
           "type": "tags"
         },
         {
-          "title": "draft",
-          "name": "draft",
-          "type": "datetime"
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
         },
         {
           "title": "featuredImage",
@@ -52,17 +54,16 @@
           "type": "image"
         },
         {
-          "title": "category",
-          "name": "category",
-          "type": "categories"
+          "title": "lastDateUpdated",
+          "name": "lastDateUpdated",
+          "type": "datetime"
         },
         {
           "title": "subcategories",
           "name": "subcategories",
           "type": "choice",
           "choices": [
-            "Perspective",
-            "Insight"
+            "Perspective"
           ]
         }
       ]
@@ -70,18 +71,13 @@
   ],
   "frontMatter.framework.id": "11ty",
   "frontMatter.preview.host": "http://localhost:8080",
-  "frontMatter.content.pageFolders": [
-    {
-      "path": "[[workspace]]/src/docs/insights",
-      "title": "insights"
-    },
-    {
-      "path": "[[workspace]]/src/docs",
-      "title": "docs"
-    }
+  "frontMatter.taxonomy.tags": [
+    "fdtechdotnet"
   ],
   "frontMatter.taxonomy.categories": [
-    "General"
-  ],
-  "frontMatter.taxonomy.tags": []
+    "Cloud Infrastructure",
+    "DevOps Practices",
+    "Fullstack-dev Technology",
+    "WebApp Development"
+  ]
 }

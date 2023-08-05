@@ -1,91 +1,33 @@
 ---
-title: "About Who, What, and All Significant Details"
+title: "About"
 description: ""
 ---
 
-<section class="page-header">
+{# <section class="page-header">
     <div class="container">
         <h1 class="page-header__title">{{ title }}</h1>
         <small>{{ description }}</small>
     </div>
-</section>
+</section> #}
 
 <section class="container page-content">
     <aside>
         <div class="page-content__toc">
             <h6>Jump to:</h6>
             <ul>
-            {% for post in collections.aboutpage | sortedCollection %}
+            {% for docContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
                 <li class="page-content__content-anchor">
-                    <a href="#{{ post.data.title | slugify }}"> {{ post.data.title }}</a>
+                    <a href="#{{ docContent.data.title | slugify }}"> {{ docContent.data.title }}</a>
                 </li>
             {% endfor %}
             </ul>
         </div>
     </aside>
     <div class="page-content__content">
-        <article class="author-info">
-            <div class="author-info__card">
-                <img src="{{ authorThumbnail }}" alt="" class="author-info__card-img">
-                <div class="author-info__card-name">
-                    <h2 >{{ author }}</h2>
-                    <small>{{ authorTitle }}</small>
-                </div>
-                <ul class="author-info__card-socialmedia">
-                    <li>
-                        <a href="{{linkedinProfile}}" target="_blank">
-                            <span class="fa-stack fa-xl">
-                                <i class="fa-solid fa-square fa-stack-2x"></i>
-                                <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ githubProfile }}" target="_blank">
-                            <span class="fa-stack fa-xl">
-                                <i class="fa-solid fa-square fa-stack-2x"></i>
-                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Author's introduction message:</p>
-            <blockquote class="author-info__summary">
-                <p >
-                    "Learn. Experience. Improve." - Every learning opportunity and learning itself leads to exposure and experience. Even the experience
-                    itself is a learning opportunity. Relative experience and available opportunities lead to potential
-                    improvement. That is my cycle for continuous improvement.
-                </p>
-                <p>
-                    I am a learning enthusiast who is professionally interested in full-stack web application development and
-                    delivery with cloud infrastructure. I have been using the .NET platform and ecosystem since I
-                    started my professional journey and engaged with...
-                </p>
-                <ul>
-                    <li>ASP.NET Core Development - MVC and Web API</li>
-                    <li>DevOps Engineering with Azure DevOps and Microsoft Azure</li>
-                    <li>Full-stack Web Application Development and Delivery</li>
-                    <li>Leading a small Feature Development for Web Applications</li>
-                    <li>Production Support for .NET enterprise business applications</li>
-                </ul>
-                <p>
-                    Other than the .NET stack of technologies, I am also keen to learn more about modern JavaScript frameworks
-                    and am currently engaged with development using Angular. For other frameworks, I still have a lot of room
-                    for improvement and uncharted areas to cover in terms of development standards and best practices.
-                </p>
-                <p>
-                    Outside of work, I am working on personal web application projects aside from spending time for
-                    personal development and passing time for hobbies. I like watching MMA fights in One Championship to
-                    root for Filipino fighter athletes, and I am currently into mountain biking as a workout routine or to
-                    unwind and feel some adrenaline.
-                </p>
-            </blockquote>
-        </article>
-        {% for post in collections.aboutpage | sortedCollection %}
+        {% for docContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
             <article class="page-content__content-entry">
-                <h2>{{ post.data.title }}<a id="{{ post.data.title | slugify }}"> » </a></h2>
-                {{ post.templateContent | safe }}
+                <h2>{{ docContent.data.title }}<a id="{{ docContent.data.title | slugify }}"> » </a></h2>
+                {{ docContent.templateContent | safe }}
             </article>
         {% endfor %}
     </div>

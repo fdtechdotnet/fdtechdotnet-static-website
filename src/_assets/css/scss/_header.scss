@@ -36,6 +36,10 @@ header {
                 text-transform: uppercase;
                 padding: 0;
                 margin: 0;
+
+                @media screen and (max-width:450px) {
+                    font-size: var(--text-size-subtitle);
+                }
             }
         }
 

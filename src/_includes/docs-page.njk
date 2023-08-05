@@ -7,12 +7,12 @@ layout: _base.njk
         <small class="docs-breadcrumb">
             <ul>
                 <li class="docs-breadcrumb__item">
-                    <a href="/docs">Documentations</a>
+                    <a href="/docs">Docs</a>
                 </li>
                 <li class="docs-breadcrumb__divider">
                     <i class="fa-solid fa-angles-right"></i>
                 </li>
-                <li class="docs-breadcrumb__item">{{ category }}</li>
+                <li class="docs-breadcrumb__item">{{ categories }}</li>
             </ul>
         </small>
         <h1 class="docs-header__title">{{ title }}</h1>
@@ -25,19 +25,21 @@ layout: _base.njk
 <section class="container docs-entry">
     <aside>
         <div class="docs-entry__toc">
-            <h6>Table Of Contents</h6>
+            <h6>In This Article:</h6>
             {{ content | toc | safe }}
         </div>
     </aside>
     <article class="docs-entry__content">
         {% if featuredImage %}
             <figure class="docs-entry__content-featured-image">
-                <img src="/_assets/{{ featuredImage }}" alt="Featured Image">
+                <img src="{{ featuredImage }}" alt="Featured Image">
                 <figcaption>Figure  01 - {{ featuredImageCaption }}</figcaption>
             </figure>
         {% endif %}
         {{ content | safe }}
-        <div class="giscus giscus-frame"></div>
+        <div class="giscus-area">
+            <div class="giscus giscus-frame"></div>
+        </div>
     </article>
 </section>
 

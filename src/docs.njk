@@ -4,9 +4,9 @@ description: ""
 permalink: /docs/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
 
 pagination:
-    data: collections.publishedPosts
+    data: collections.publishedDocs
     size: 3
-    alias: pagedPublishedPosts
+    alias: pagedpublishedDocs
 ---
 
 {% include '_content/docs-categories.njk' %}
@@ -25,7 +25,7 @@ pagination:
     </aside>
     <article class="recent-post__list">
         <ul>
-        {% for post in pagedPublishedPosts | sort(false, false, date) %}
+        {% for post in pagedpublishedDocs | sort(false, false, date) %}
             <li>
                 <a href="{{ post.url }}" class="recent-post__title">{{ post.data.title }}</a>
                 <div class="recent-post__meta small">Published on {{ post.data.date | localeDate }}</div>
