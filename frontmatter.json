@@ -79,5 +79,15 @@
     "DevOps Practices",
     "Fullstack-dev Technology",
     "WebApp Development"
+  ],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "_assets",
+      "path": "[[workspace]]/src/_assets"
+    },
+    {
+      "title": "img",
+      "path": "[[workspace]]/src/_assets/img"
+    }
   ]
 }

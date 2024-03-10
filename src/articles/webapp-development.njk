@@ -1,17 +1,19 @@
 ---
-title: Projects
+title: "WebApp Development"
+description: "Familiarize with full-stack web application development by learning
+    front-end client and back-end service application development."
 ---
 
 {% include '_page-callout.njk' %}
 
 <section class="recent-posts">
-    <h5 class="recent-posts__title">Recent Projects</h5>
-    <div class="recent-posts__entries">
+    <h5 class="container recent-posts__title">Recent Posts</h5>
+    <div class="container recent-posts__entries">
         <div class="entry-posts">
-            {% for post in collections.projects | sort(false, false, date) %}
+            {% for post in collections.webappdevelopment | sort(false, false, date) %}
                 <article class="entry-posts__ite">
                     <a href="{{ post.url }}" class="entry-posts__item-title">{{ post.data.title }}</a>
-                    <div class="entry-posts__item-meta small">Last date updated on {{ post.data.lastDateUpdated | localeDate }}</div>
+                    <div class="entry-posts__item-meta small">Published on {{ post.data.date | localeDate }}</div>
                     <a href="{{ post.url }}" class="entry-posts__item-excerpt">
                         {% if post.data.description %}
                             {{ post.data.description | excerpt }}

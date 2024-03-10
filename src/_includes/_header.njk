@@ -1,14 +1,12 @@
 <header>
-    <div class="container">
-        <a class="logo-brand" href="/">
-            <img src="/_assets/img/_logo.png" alt="Logo Thumbnail">
-        </a>
-        <div class="header__title">
-            <p>{{ siteName }}</p>
-            <small>{{ siteSubtitle }}</small>
-        </div>
-        <div class="header__default-nav">
-            {% include '_nav.njk' %}
-        </div>
+    <a class="logo-brand" href="/">
+        <img src="/_assets/img/_logo.png" alt="Logo Thumbnail">
+    </a>
+    <div class="header__title">
+        <p>{{ siteName }}</p>
+        <small>{{ siteSubtitle }}</small>
+    </div>
+    <div class="header__default-nav">
+        {% include '_nav.njk' %}
     </div>
 </header>

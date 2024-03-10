@@ -1,34 +1,38 @@
 ---
 title: "About"
-description: ""
 ---
 
-{# <section class="page-header">
-    <div class="container">
-        <h1 class="page-header__title">{{ title }}</h1>
-        <small>{{ description }}</small>
-    </div>
-</section> #}
-
-<section class="container page-content">
+<section class="page-content">
     <aside>
         <div class="page-content__toc">
-            <h6>Jump to:</h6>
+            <h6>Jump to...</h6>
             <ul>
-            {% for docContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+            {% if markdownContent.data.title %}
                 <li class="page-content__content-anchor">
-                    <a href="#{{ docContent.data.title | slugify }}"> {{ docContent.data.title }}</a>
+                    <a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a>
                 </li>
+            {% endif %}
             {% endfor %}
             </ul>
         </div>
     </aside>
+    <div class="page-content__header">
+        <h1>{{title}}</h1>
+    </div>
     <div class="page-content__content">
-        {% for docContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+        {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+        {% if markdownContent.templateContent %}
             <article class="page-content__content-entry">
-                <h2>{{ docContent.data.title }}<a id="{{ docContent.data.title | slugify }}"> » </a></h2>
-                {{ docContent.templateContent | safe }}
+                {% if markdownContent.data.title %}
+                <h2>
+                    <a id="{{ markdownContent.data.title | slugify }}"></a>
+                    {{ markdownContent.data.title }}
+                </h2>
+                {% endif %}
+                {{ markdownContent.templateContent | safe }}
             </article>
+        {% endif %}
         {% endfor %}
     </div>
 </section>

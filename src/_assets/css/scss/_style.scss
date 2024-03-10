@@ -19,6 +19,12 @@
     }
 }
 
+.container-block {
+    padding: var(--default-spacing);
+    background-color: var(--bg-slategray);
+    border-radius: .25rem;
+}
+
 .content-block {
     box-shadow: 1rem 1rem 1rem var(--shadow-dark);
     background-color: var(--bg-slategray);

@@ -1,6 +1,0 @@
-{
-    "layout": "docs-page.njk",
-    "permalink": "docs/fdtechdotnet/{{ title | slugify }}/",
-    "categories": ["Fullstack-dev Technology"],
-    "tags": ["documentation"]
-}

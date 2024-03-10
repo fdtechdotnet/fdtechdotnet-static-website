@@ -1,5 +1,1 @@
-$(function() {
-
-
-
-});
+let trueFunction = () => true;

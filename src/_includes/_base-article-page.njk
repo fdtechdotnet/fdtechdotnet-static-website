@@ -1,0 +1,63 @@
+---
+layout: _base.njk
+---
+
+<section id="articles-page">
+    <aside class="container articles-entry__toc">
+        <h6>In This Article:</h6>
+        {{ content | toc | safe }}
+    </aside>
+
+    <section class="articles-header">
+        <div class="container">
+            <small class="articles-breadcrumb">
+                <ul>
+                    <li class="articles-breadcrumb__item">
+                        <a href="/articles">Articles</a>
+                    </li>
+                    <li class="articles-breadcrumb__divider">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </li>
+                    <li class="articles-breadcrumb__item">{{ category }}</li>
+                </ul>
+            </small>
+            <h1 class="articles-header__title">{{ title }}</h1>
+            {% if date %}
+                <small>Published on {{ date | localeDate }}</small>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="articles-entry">
+        <article class="articles-entry__content">
+            {% if featuredImage %}
+                <figure class="articles-entry__content-featured-image">
+                    <img src="{{ featuredImage }}" alt="Featured Image">
+                    <figcaption>Figure  01 - {{ featuredImageCaption }}</figcaption>
+                </figure>
+            {% endif %}
+            {{ content | safe }}
+            <div class="giscus-area">
+                <div class="giscus giscus-frame"></div>
+            </div>
+        </article>
+    </section>
+
+    <section class="articles-comments">
+        <script src="https://giscus.app/client.js"
+                data-repo="cristianmayo/fdtechdotnet"
+                data-repo-id="R_kgDOJKvtLA"
+                data-category="Documentations"
+                data-category-id="DIC_kwDOJKvtLM4CYXBj"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="dark"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</section>
