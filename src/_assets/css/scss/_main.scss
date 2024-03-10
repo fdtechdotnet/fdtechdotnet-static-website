@@ -1,18 +1,12 @@
 main {
-    margin: var(--three-spacing) 0;
+    margin: var(--default-spacing) 0;
+    padding: var(--two-spacing);
     display: flex;
     flex-direction: column;
-    gap: var(--two-spacing);
+    gap: var(--five-spacing);
 
     @media screen and (max-width: 800px) {
-        margin: var(--two-spacing) 0;
-    }
-
-    aside {
-        width: 25rem;
-
-        @media screen and (max-width:800px) {
-            width: calc(100% - var(--two-spacing));
-        }
+        padding: var(--default-spacing);
+        gap: var(--three-spacing);
     }
 }

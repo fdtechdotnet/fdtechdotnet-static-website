@@ -1,0 +1,19 @@
+.article-subcategories {
+
+    &__title {
+        color: var(--text-dimgray);
+        text-transform: uppercase;
+    }
+
+    &__list > li {
+        line-height: var(--text-lineheight);
+
+        & > a, & > a:visited {
+            color: var(--text-lightgray);
+        }
+
+        & > a:hover {
+            color: #fff;
+        }
+    }
+}

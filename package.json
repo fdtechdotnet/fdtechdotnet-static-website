@@ -29,6 +29,7 @@
     "@babel/core": "^7.18.5",
     "@kevingimbel/eleventy-plugin-mermaid": "^2.1.0",
     "del": "^6.1.1",
+    "eslint": "^8.57.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",

@@ -76,33 +76,33 @@ module.exports = function(config) {
           });
     });
 
-    /* =========================  Documentations Config ======================== */
-    config.addCollection("publishedDocs", (collection) => { return _
+    /* =========================  Articles Config ======================== */
+    config.addCollection("publishedArticles", (collection) => { return _
         .chain(collection.getAllSorted())
-        .filter((doc) => doc.url && doc.inputPath.startsWith('./src/docs/')  && !doc.data.draft)
+        .filter((doc) => doc.url && doc.inputPath.startsWith('./src/articles/')  && !doc.data.draft)
         .reverse()
         .value();
     });
 
-    config.addCollection("docsByCategory", (collection) => {
+    config.addCollection("articlesByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((doc) => doc.url && doc.inputPath.startsWith('./src/docs/') && !doc.data.draft && doc.data.categories)
-            .groupBy((doc) => doc.data.categories)
+            .filter((doc) => doc.url && doc.inputPath.startsWith('./src/articles/') && !doc.data.draft && doc.data.category)
+            .groupBy((doc) => doc.data.category)
             .toPairs()
             .reverse()
             .value();
     });
 
-    config.addCollection("docsBySubcategory", (collection) => {
+    config.addCollection("articlesBySubcategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
             .filter(
-                (doc) => doc.url && doc.inputPath.startsWith('./src/docs/')
+                (doc) => doc.url && doc.inputPath.startsWith('./src/articles/')
                         && !doc.data.draft
-                        && doc.data.subcategories
+                        && doc.data.subcategory
             )
-            .groupBy((doc) => doc.data.subcategories)
+            .groupBy((doc) => doc.data.subcategory)
             .toPairs()
             .reverse()
             .value();

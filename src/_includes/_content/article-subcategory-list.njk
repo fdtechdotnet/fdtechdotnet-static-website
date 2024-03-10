@@ -1,0 +1,14 @@
+<section class="article-subcategories">
+    {% if collections.articlesBySubcategory.length > 0 %}
+    <h5 class="article-subcategories__title">Article Subcategories</h5>
+    <ul class="article-subcategories__list">
+        {% for articles in collections.articlesBySubcategory | sort(false, false, articles[0]) %}
+        <li>
+            <a href="/articles/{{ articles[0] | slugify }}">
+                {{ articles[0] }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>

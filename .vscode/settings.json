@@ -1,23 +1,5 @@
 {
     "[markdown]": {
     },
-    "frontMatter.dashboard.openOnStart": true,
-    "frontMatter.content.pageFolders": [
-        {
-            "title": "docs",
-            "path": "[[workspace]]/src/docs"
-        },
-        {
-            "title": "_assets",
-            "path": "[[workspace]]/src/_assets"
-        },
-        {
-            "title": "img",
-            "path": "[[workspace]]/src/_assets/img"
-        },
-        {
-            "title": "fdtechdotnet",
-            "path": "[[workspace]]/src/docs/fdtechdotnet"
-        }
-    ]
+    "frontMatter.dashboard.openOnStart": true
 }

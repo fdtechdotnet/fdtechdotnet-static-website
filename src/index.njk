@@ -2,5 +2,15 @@
 title: Home
 ---
 
-{% include '_content/docs-categories.njk' %}
-{% include '_content/recent-docs.njk' %}
+<figure id="home-figure">
+    <img src="/_assets/svg/fdtechdotnet-learning-target-and-scope.drawio.svg" alt="Learning Target and Scope" />
+    <figcaption><h5>Figure 01: Learning Target and Scope</h5></figcaption>
+</figure>
+<section id="home-page">
+    {% include '_content/article-category-cards.njk' %}
+    {% include '_content/recent-articles.njk' %}
+    <aside>
+        {% include '_content/article-category-list.njk' %}
+        {% include '_content/article-subcategory-list.njk' %}
+    </aside>
+</section>

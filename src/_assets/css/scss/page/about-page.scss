@@ -1,0 +1,92 @@
+.page-header {
+    background-color: var(--bg-primary);
+    color: var(--text-white);
+    padding: var(--two-spacing) var(--default-spacing);
+
+    &__title {
+        color: var(--text-white);
+        text-transform: unset;
+        padding: 0;
+        margin: 0;
+
+        @media screen and (max-width:800px) {
+            font-size: var(--text-size-lg);
+        }
+    }
+}
+
+.page-content {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--three-spacing);
+
+    @media screen and (max-width:800px) {
+        flex-direction: column;
+        gap: var(--two-spacing);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-white);
+        text-transform: capitalize;
+    }
+
+    h1 {
+        border-top: 5px solid var(--bg-primary);
+        padding-top: var(--default-spacing);
+        display: block;
+    }
+
+    &__toc {
+        padding: var(--default-spacing);
+        background-color: var(--bg-slategray);
+        border-radius: 0.25rem;
+        width: var(--sidebar-width);
+
+        @media screen and (max-width:800px) {
+            width: calc(100% - var(--two-spacing));
+        }
+
+        h6 {
+            text-transform: uppercase;
+            font-size: var(--text-size-default);
+            color: var(--text-light);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 1.5rem;
+
+            & > li a {
+                display: block;
+                padding: 0.25rem;
+                color: var(--text-lightgray);
+                font-size: small;
+
+                &:hover {
+                    color: var(--text-white);
+                }
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+
+        &-entry:not(:first-child) {
+            margin-top: var(--three-spacing);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        & > .giscus {
+            border-top: 5px solid var(--bg-primary);
+            margin-top: var(--two-spacing);
+            padding-top: var(--two-spacing);
+        }
+    }
+}
