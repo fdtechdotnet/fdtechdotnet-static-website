@@ -1,6 +1,10 @@
 #home-figure {
-    padding: 0 var(--default-spacing);
+    padding: 0 var(--two-spacing);
     margin: 0;
+
+    @media screen and (max-width:800px) {
+        padding: 0 var(--default-spacing);
+    }
 
     img {
         width: 100%;
@@ -17,6 +21,7 @@
 }
 
 #home-page {
+    padding: 0 var(--two-spacing);
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--three-spacing);
@@ -24,6 +29,7 @@
     @media screen and (max-width:800px) {
         display: flex;
         flex-direction: column;
+        padding: var(--default-spacing);
     }
 
     & > section:first-child {

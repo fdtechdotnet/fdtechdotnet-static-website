@@ -1,21 +1,25 @@
 ---
 title: "About"
-description: ""
 ---
 
 <section class="page-content">
-    <aside class="page-content__toc">
-        <h6>About</h6>
-        <ul>
-        {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
-        {% if markdownContent.data.title %}
-            <li class="page-content__content-anchor">
-                <a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a>
-            </li>
-        {% endif %}
-        {% endfor %}
-        </ul>
+    <aside>
+        <div class="page-content__toc">
+            <h6>Jump to...</h6>
+            <ul>
+            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+            {% if markdownContent.data.title %}
+                <li class="page-content__content-anchor">
+                    <a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a>
+                </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
     </aside>
+    <div class="page-content__header">
+        <h1>{{title}}</h1>
+    </div>
     <div class="page-content__content">
         {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
         {% if markdownContent.templateContent %}

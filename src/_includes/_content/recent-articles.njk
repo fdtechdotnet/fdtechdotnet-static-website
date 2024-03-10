@@ -1,7 +1,7 @@
 <section class="recent-articles">
     <h5 class="recent-articles__title">Recent Articles</h5>
     <div class="recent-articles__list">
-            {% for post in collections.articles | sortedCollectionByDateDesc | take(5) %}
+            {% for post in collections.articles | sortedCollectionByDateDesc | take(3) %}
                 <article class="article-entry">
                     <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
                     <div class="article-entry__meta small">

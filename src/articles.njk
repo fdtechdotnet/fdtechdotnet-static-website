@@ -4,7 +4,11 @@ title: Articles
 
 {# {% include '_page-callout.njk' %} #}
 
-<section id="article-page">
+
+<section id="articles-page">
+    <section class="articles-page__header">
+        <h1>{{title}}</h1>
+    </section>
     <section class="articles-list">
     {% for post in collections.articles | sortedCollectionByDateDesc %}
         <article class="article-entry">
