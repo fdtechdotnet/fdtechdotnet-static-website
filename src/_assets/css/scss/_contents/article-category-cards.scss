@@ -1,26 +1,21 @@
 .article-category-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: var(--two-spacing);
     color: var(--text-light);
-
-    @media screen and (max-width:800px) {
-        grid-template-columns: 1fr;
-        gap: var(--default-spacing);
-    }
+    flex-direction: column;
 
     &__item {
+        background-color: var(--bg-slategray);
+        border-top: solid 5px var(--bg-primary);
 
         .category-card {
-            background-color: var(--bg-slategray);
-            border-top: solid 5px var(--bg-primary);
-            padding: var(--two-spacing);
             display: flex;
             flex-direction: column;
             color: var(--text-light);
+            padding: var(--two-spacing);
 
             @media screen and (max-width:450px) {
-                padding: var(--default-spacing);
+                padding: var(--two-spacing) var(--default-spacing);
             }
 
             &:hover {
