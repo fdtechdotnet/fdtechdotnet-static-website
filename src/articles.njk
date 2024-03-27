@@ -5,13 +5,13 @@ title: Articles
 {# {% include '_page-callout.njk' %} #}
 
 
-<section id="articles-page">
-    <section class="articles-page__header">
-        <h1>{{title}}</h1>
-    </section>
-    <section class="articles-list">
-    {% for post in collections.articles | sortedCollectionByDateDesc %}
-        <article class="article-entry">
+<section class="articles-page">
+    <section class="articles-page__articles-list">
+        <section class="articles-list__header">
+            <h1>{{title}}</h1>
+        </section>
+        {% for post in collections.articles | sortedCollectionByDateDesc %}
+        <article class="articles-list__entry">
             <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
             <div class="article-entry__meta small">
                 <span><strong>{{ post.data.category }}</strong></span>
@@ -26,10 +26,13 @@ title: Articles
                 {% endif %}
             </a>
         </article>
-    {% endfor %}
+        {% endfor %}
     </section>
+    <div class="articles-page__callout-actions container-block">
+        {% include '_content/article-category-list.njk' %}
+    </div>
     <aside>
-        <div class="container-block">{% include '_content/article-category-list.njk' %}</div>
-        <div class="container-block">{% include '_content/article-subcategory-list.njk' %}</div>
+        <div>{% include '_content/article-category-list.njk' %}</div>
+        <div>{% include '_content/article-subcategory-list.njk' %}</div>
     </aside>
 </section>
