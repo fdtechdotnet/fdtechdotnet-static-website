@@ -28,11 +28,12 @@ title: Articles
         </article>
         {% endfor %}
     </section>
-    <div class="articles-page__callout-actions container-block">
-        {% include '_content/article-category-list.njk' %}
-    </div>
+    {# <section class="articles-page__callout-actions container-block">
+        Callout Actions here...
+    </section> #}
     <aside>
-        <div>{% include '_content/article-category-list.njk' %}</div>
-        <div>{% include '_content/article-subcategory-list.njk' %}</div>
+        {% include '_content/article-category-cards.njk' %}
+        {% include '_content/article-category-list.njk' %}
+        {% include '_content/article-subcategory-list.njk' %}
     </aside>
 </section>
