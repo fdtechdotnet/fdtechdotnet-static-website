@@ -4,25 +4,24 @@ description: "Explore and familiarize with Microsoft Azure cloud services by lea
     infrastructure suited for your needs."
 ---
 
-{% include '_page-callout.njk' %}
-
-<section class="recent-posts">
-    <h5 class="container recent-posts__title">Recent Posts</h5>
-    <div class="container recent-posts__entries">
-        <div class="entry-posts">
-            {% for post in collections.cloudinfrastructure | sort(false, false, date) %}
-                <article class="entry-posts__ite">
-                    <a href="{{ post.url }}" class="entry-posts__item-title">{{ post.data.title }}</a>
-                    <div class="entry-posts__item-meta small">Published on {{ post.data.date | localeDate }}</div>
-                    <a href="{{ post.url }}" class="entry-posts__item-excerpt">
-                        {% if post.data.description %}
-                            {{ post.data.description | excerpt }}
-                        {% else %}
-                            {{ post.templateContent | excerpt }}
-                        {% endif %}
-                    </a>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+{% if collections.cloudinfrastructure.length > 0 %}
+    {% for post in collections.cloudinfrastructure | sortedCollectionByDateDesc %}
+        <article class="article-entry">
+            <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
+            <div class="article-entry__meta small">
+                <span><strong>{{ post.data.category }}</strong></span>
+                <span class="divider"> | </span>
+                <span>Published on {{ post.data.date | localeDate }}</span>
+            </div>
+            <a href="{{ post.url }}" class="article-entry__excerpt">
+                {% if post.data.description %}
+                    {{ post.data.description | excerpt }}
+                {% else %}
+                    {{ post.templateContent | excerpt }}
+                {% endif %}
+            </a>
+        </article>
+    {% endfor %}
+{% else %}
+    No post have been made yet...
+{% endif %}

@@ -15,42 +15,42 @@
         padding-top: var(--default-spacing);
 
 
-            .article-entry {
+        .article-entry {
 
-                &__title {
+            &__title {
+                color: var(--text-primary);
+                font-size: var(--text-size-lg);
+                font-family: var(--font-title);
+                font-weight: bold;
+                display: block;
+
+                &:visited, &:hover {
                     color: var(--text-primary);
-                    font-size: var(--text-size-lg);
-                    font-family: var(--font-title);
-                    font-weight: bold;
-                    display: block;
-
-                    &:visited, &:hover {
-                        color: var(--text-primary);
-                    }
-                }
-
-                &__meta {
-                    color: var(--text-lightgray);
-                    padding-bottom: calc(var(--default-spacing)/2);
-                }
-
-                &__excerpt {
-                    line-height: 1.5;
-                    color: var(--text-light);
-                    display: block;
-
-                    @media screen and (max-width:800px) {
-                        font-size: var(--text-size-default);
-                    }
-
-                    &:visited {
-                        color: var(--text-light);
-                    }
-
-                    &:hover {
-                        color: #fff;
-                    }
                 }
             }
+
+            &__meta {
+                color: var(--text-lightgray);
+                padding-bottom: calc(var(--default-spacing)/2);
+            }
+
+            &__excerpt {
+                line-height: 1.5;
+                color: var(--text-light);
+                display: block;
+
+                @media screen and (max-width:800px) {
+                    font-size: var(--text-size-default);
+                }
+
+                &:visited {
+                    color: var(--text-light);
+                }
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
     }
 }

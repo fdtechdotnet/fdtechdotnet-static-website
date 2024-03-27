@@ -1,6 +1,0 @@
-{
-    "layout": "_base-article-page.njk",
-    "permalink": "articles/uncategorized/{{ title | slugify }}/",
-    "tags": ["articles", "uncategorized"],
-    "category": "Uncategorized"
-}

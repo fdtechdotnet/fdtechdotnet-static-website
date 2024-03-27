@@ -1,0 +1,31 @@
+---
+layout: _base.njk
+---
+
+<section class="articles-category-page">
+
+    <section class="articles-category-page__content">
+        <div class="articles-category-page__content-header">
+            <ul class="small">
+                <li><a href="/articles">Articles</a></li>
+                <li class="articles-breadcrumb__divider"><i class="fa-solid fa-angles-right"></i></li>
+                <li class="articles-breadcrumb__item">Category</li>
+            </ul>
+            <h1>{{ title }}</h1>
+            {% if description %}<p>{{ description }}</p>{% endif %}
+        </div>
+        <div class="articles-category-page__content-list">
+            {{ content | safe }}
+        </div>
+    </section>
+
+    {# <section class="articles-category-page__callout-actions container-block">
+        Callout Actions here...
+    </section> #}
+
+    <aside>
+        {% include '_content/article-category-list.njk' %}
+        {% include '_content/article-subcategory-list.njk' %}
+    </aside>
+
+</section>

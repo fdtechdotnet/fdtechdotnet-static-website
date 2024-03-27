@@ -1,0 +1,6 @@
+{
+    "layout": "_base-article-page.njk",
+    "permalink": "articles/others/{{ title | slugify }}/",
+    "tags": ["articles", "others"],
+    "category": "Others"
+}
