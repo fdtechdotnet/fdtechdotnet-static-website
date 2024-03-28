@@ -1,5 +1,5 @@
 {
-    "layout": "_base-article-page.njk",
+    "layout": "_base-article-view-page.njk",
     "permalink": "articles/others/{{ title | slugify }}/",
     "tags": ["articles", "others"],
     "category": "Others"

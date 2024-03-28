@@ -1,5 +1,5 @@
 {
-    "layout": "_base-article-page.njk",
+    "layout": "_base-article-view-page.njk",
     "permalink": "articles/devops-practices/{{ title | slugify }}/",
     "tags": ["articles", "devopspractices"],
     "category": "DevOps Practices"

@@ -1,0 +1,60 @@
+---
+layout: _base.njk
+---
+
+<section class="article-view-page">
+
+    <section class="article-view-page__content">
+        <section class="article-view-page__content-header">
+            <ul class="small">
+                <li><a href="/articles">Articles</a></li>
+                <li class="articles-breadcrumb__divider"><i class="fa-solid fa-angles-right"></i></li>
+                <li class="articles-breadcrumb__item">{{ category }}</li>
+            </ul>
+            <h1>{{ title }}</h1>
+            {% if date %}<small>Published on {{ date | localeDate }}</small>{% endif %}
+        </section>
+        <section class="article-view-page__content-toc">
+            <h6>Table Of Contents</h6>
+            {{ content | toc | safe }}
+            <ul>
+        </section>
+        {% if featuredImage %}
+        <figure class="article-view-page__content-featured-image">
+            <img src="{{ featuredImage }}" alt="Featured Image">
+            <figcaption>Figure-01: {{ featuredImageCaption }}</figcaption>
+        </figure>
+        {% endif %}
+        <section class="article-view-page__content-details">
+            {{ content | safe }}
+        </section>
+        <section class="article-view-page__content-giscus">
+            <div class="giscus giscus-frame"></div>
+            <script src="https://giscus.app/client.js"
+                data-repo="cristianmayo/fdtechdotnet"
+                data-repo-id="R_kgDOJKvtLA"
+                data-category="Documentations"
+                data-category-id="DIC_kwDOJKvtLM4CYXBj"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="dark"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </section>
+    </section>
+
+    {# <section class="articles-category-page__callout-actions container-block">
+        Callout Actions here...
+    </section> #}
+
+    <aside>
+        {% include '_content/article-category-list.njk' %}
+        {% include '_content/article-subcategory-list.njk' %}
+    </aside>
+
+</section>
