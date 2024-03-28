@@ -8,11 +8,7 @@ description: "Start implementing build, test, deployment with automations and
     {% for post in collections.devopspractices | sortedCollectionByDateDesc %}
         <article class="article-entry">
             <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
-            <div class="article-entry__meta small">
-                <span><strong>{{ post.data.category }}</strong></span>
-                <span class="divider"> | </span>
-                <span>Published on {{ post.data.date | localeDate }}</span>
-            </div>
+            <p class="article-entry__meta small">Published on {{ post.data.date | localeDate }}</p>
             <a href="{{ post.url }}" class="article-entry__excerpt">
                 {% if post.data.description %}
                     {{ post.data.description | excerpt }}
@@ -23,5 +19,5 @@ description: "Start implementing build, test, deployment with automations and
         </article>
     {% endfor %}
 {% else %}
-    No post have been made yet...
+    <span class="article-post-notice">No post have been made yet...</span>
 {% endif %}

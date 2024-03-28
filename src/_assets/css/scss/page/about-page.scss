@@ -43,10 +43,13 @@
         }
 
         &-toc {
-            margin: 0 var(--two-spacing);
+            margin: 0 0 0 var(--two-spacing);
+            padding: var(--two-spacing) 0 0 0;
+            border-top: solid var(--bg-primary) var(--half-spacing);
 
             @media screen and (max-width:800px) {
-                margin: 0 var(--default-spacing);
+                margin: 0 0 0 var(--default-spacing);
+                padding: var(--default-spacing) 0 0 0;
             }
 
             h6 {

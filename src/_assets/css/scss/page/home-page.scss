@@ -50,13 +50,19 @@
             }
         }
 
-        figcaption h5 {
-            color: var(--text-dimgray);
-            text-transform: uppercase;
-            padding: var(--default-spacing) 0 0 var(--two-spacing);
+        figcaption {
+            margin: var(--two-spacing) 0 0 var(--two-spacing);
+            padding: var(--two-spacing) 0 0 0;
+            border-top: solid var(--bg-primary) var(--half-spacing);
 
             @media screen and (max-width:800px) {
-                padding: var(--default-spacing);
+                margin: var(--default-spacing) 0 0 var(--default-spacing);
+                padding: var(--default-spacing) 0 0 0;
+            }
+
+            h5 {
+                color: var(--text-dimgray);
+                text-transform: uppercase;
             }
         }
 

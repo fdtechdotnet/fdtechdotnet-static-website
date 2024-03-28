@@ -4,9 +4,8 @@
     <ul class="article-subcategories__list">
         {% for articles in collections.articlesBySubcategory | sort(false, false, articles[0]) %}
         <li>
-            <a href="/articles/{{ articles[0] | slugify }}">
-                {{ articles[0] }}
-            </a>
+            {# <a href="/articles/{{ articles[0] | slugify }}">{{ articles[0] }}</a> #}
+            <a href="#">{{ articles[0] }}</a>
         </li>
         {% endfor %}
     </ul>

@@ -12,7 +12,7 @@ layout: _base.njk
                 <li class="articles-breadcrumb__item">Category</li>
             </ul>
             <h1>{{ title }}</h1>
-            {% if description %}<p>{{ description }}</p>{% endif %}
+            {% if description %}<span class>{{ description }}</small>{% endif %}
         </div>
         <div class="articles-category-page__content-list">
             {{ content | safe }}

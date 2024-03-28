@@ -21,10 +21,6 @@
         grid-column: 1;
         grid-row: span 3;
 
-        @media screen and (max-width:800px) {
-            gap: 0;
-        }
-
         .articles-list {
 
             &__header {
@@ -45,15 +41,18 @@
                 }
             }
 
-            @media screen and (max-width:800px) {
-                padding: 0 var(--default-spacing);
-            }
-
             &__entry {
-                padding: 0 var(--two-spacing);
+                margin: 0 0 0 var(--two-spacing);
+                padding: 0;
 
                 @media screen and (max-width:800px) {
-                    padding: var(--default-spacing);
+                    margin: 0 0 0 var(--default-spacing);
+                    padding: 0 var(--default-spacing) 0 0;
+                }
+
+                &:nth-child(2) {
+                    padding: var(--two-spacing) 0 0 0;
+                    border-top: solid var(--bg-primary) var(--half-spacing);
                 }
 
                 .article-entry {
