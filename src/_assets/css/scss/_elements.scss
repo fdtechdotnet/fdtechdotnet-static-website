@@ -81,34 +81,47 @@ blockquote {
     }
 }
 
-pre, code {
+code {
     background-color: var(--bg-slategray);
     border-radius: 3px;
-    padding: calc(var(--default-spacing)/2) var(--default-spacing);
+    padding: 3px var(--half-spacing);
 }
 
-pre > code {
-    padding: 0;
+pre {
+    background-color: var(--bg-slategray);
+    border-radius: 3px;
+    padding: var(--default-spacing);
 }
 
 table {
-    border-radius: .25rem;
-    padding: var(--default-spacing);
+    border-radius: 3px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: var(--bg-slategray);
+    box-shadow: var(--shadow-dark-bottom);
+    -webkit-box-shadow: var(--shadow-dark-bottom);
+    -moz-box-shadow: var(--shadow-dark-bottom);
+    padding: 0;
+    margin: 0 0 var(--two-spacing) 0;
 
-    & > thead, & > tbody {
-        vertical-align: text-top;
-        text-align: left;
+    & thead, & tbody, & th, & tr, & td {
+        padding: var(--half-spacing) var(--default-spacing);
+        margin: 0;
     }
 
-    & > thead {
+    & thead, & th {
+        border: 1px solid var(--bg-dark);
+        border-bottom: 3px solid var(--bg-dark);
+        background-color: var(--bg-slategray);
         text-transform: uppercase;
         font-family: var(--font-title);
         font-size: var(--text-size-default);
     }
 
     td {
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--bg-primary);
+        padding: var(--half-spacing) var(--default-spacing);
+        border: 1px solid var(--bg-dark);
+        border-collapse: collapse;
         margin: 0;
     }
 }

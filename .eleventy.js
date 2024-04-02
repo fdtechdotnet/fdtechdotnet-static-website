@@ -131,7 +131,14 @@ module.exports = function(config) {
         flat: false
     });
 
-    config.addPlugin(pluginMermaid);
+    config.addPlugin(pluginMermaid, {
+        html_tag: 'div',
+        extra_classes: 'mermaidjs-diagram',
+        mermaid_config: {
+          'startOnLoad': true,
+          'theme': 'dark'
+        }
+      });
 
     return {
         dir: {

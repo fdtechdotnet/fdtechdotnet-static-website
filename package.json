@@ -27,7 +27,7 @@
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@babel/core": "^7.18.5",
-    "@kevingimbel/eleventy-plugin-mermaid": "^2.1.0",
+    "@kevingimbel/eleventy-plugin-mermaid": "^2.2.1",
     "del": "^6.1.1",
     "eslint": "^8.57.0",
     "gulp": "^4.0.2",

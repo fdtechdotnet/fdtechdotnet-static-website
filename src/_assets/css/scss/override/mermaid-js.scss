@@ -1,119 +1,38 @@
-pre.mermaid {
+pre:not([class]), code[class="language-mermaid"] {
     background-color: transparent;
     border-radius: unset;
-    padding: var(--default-spacing);
-    font-size: var(--text-size-default);
-    fill: #333;
+    padding: 0;
+}
 
-  & .edge-thickness-normal {
-    stroke-width: 2px;
-  }
-  & .edge-thickness-thick {
-    stroke-width: 3.5px;
-  }
-  & .edge-pattern-solid {
-    stroke-dasharray: 0;
-  }
-  & .edge-pattern-dashed {
-    stroke-dasharray: 3;
-  }
-  & .edge-pattern-dotted {
-    stroke-dasharray: 2;
-  }
-  & .marker {
-    fill: var(--bg-lightgray);
-    stroke: var(--bg-lightgray);
-  }
-  & .marker.cross {
-    stroke: var(--bg-lightgray);
-  }
-  & svg {
-    font-family: var(--font-body);
-    font-size: 16px;
-  }
-  & .label {
-    font-family: var(--font-body);
-    color: #333;
-  }
-  & .cluster-label text {
-    fill: #333;
-  }
-  & .cluster-label span,
-  & p {
-    color: #333;
-  }
-  & .label text,
-  & span,
-  & p {
-    fill: #333;
-    color: #333;
-  }
-  & .node rect,
-  & .node circle,
-  & .node ellipse,
-  & .node polygon,
-  & .node path {
-    fill: #ececff;
-    stroke: #9370db;
-    stroke-width: 1px;
-  }
-  & .flowchart-label text {
-    text-anchor: middle;
-  }
-  & .node .label {
-    text-align: center;
-  }
-  & .node.clickable {
-    cursor: pointer;
-  }
-  & .arrowheadPath {
-    fill: var(--bg-lightgray);
-  }
-  & .edgePath .path {
-    stroke: var(--bg-lightgray);
-    stroke-width: 2px;
-  }
-  & .flowchart-link {
-    stroke: var(--bg-lightgray);
-    fill: none;
-  }
-  & .edgeLabel {
-    background-color: #e8e8e8;
-    text-align: center;
-  }
-  & .edgeLabel rect {
-    opacity: 0.5;
-    background-color: #e8e8e8;
-    fill: #e8e8e8;
-  }
-  & .cluster rect {
-    fill: #ffffde;
-    stroke: #aaaa33;
-    stroke-width: 1px;
-  }
-  & .cluster text {
-    fill: #333;
-  }
-  & .cluster span,
-  & p {
-    color: #333;
-  }
-  & div.mermaidTooltip {
-    position: absolute;
-    text-align: center;
-    max-width: 200px;
-    padding: 2px;
-    font-family: var(--font-body);
-    font-size: 12px;
-    background: hsl(80, 100%, 96.2745098039%);
-    border: 1px solid #aaaa33;
-    border-radius: 2px;
-    pointer-events: none;
-    z-index: 100;
-  }
-  & .flowchartTitleText {
-    text-anchor: middle;
-    font-size: 18px;
-    fill: #333;
-  }
+pre:not([class]) {
+    margin: 0 0 var(--default-spacing) 0;
+}
+
+
+div.mermaidjs-diagram {
+
+    svg[role="graphics-document document"] {
+
+        .actor, .participant, .pieTitleText, .gitTitleText {
+            font-family: var(--font-title) !important;
+            font-weight: bold;
+        }
+
+        .pieTitleText {
+            font-size: var(--text-size-subtitle) !important;
+        }
+
+        .messageText, span.nodeLabel, span.edgeLabel, .slice, .legend text {
+            font-family: var(--font-body) !important;
+            font-size: small !important;
+        }
+
+        .branchLabel text {
+            font-family: var(--font-body) !important;
+            font-size: smaller !important;
+            font-weight: bold;
+        }
+
+    }
+
 }

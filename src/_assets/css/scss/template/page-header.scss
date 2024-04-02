@@ -1,0 +1,74 @@
+.page-header {
+    display: grid;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--three-spacing);
+    padding: 0;
+    margin: 0;
+
+    @media screen and (max-width:800px) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--two-spacing);
+    }
+
+    &__title {
+        padding: var(--three-spacing) var(--two-spacing);
+        box-shadow: var(--shadow-dark-bottom);
+        -webkit-box-shadow: var(--shadow-dark-bottom);
+        -moz-box-shadow: var(--shadow-dark-bottom);
+        background-color: var(--bg-primary);
+        border-radius: 0 var(--quarter-spacing) var(--quarter-spacing) 0;
+
+        @media screen and (max-width:800px) {
+            margin: 0 var(--default-spacing) 0 0;
+            padding: var(--two-spacing) var(--default-spacing);
+        }
+
+        h1 {
+            text-transform: capitalize;
+            color: #fff;
+
+            @media screen and (max-width:800px) {
+                font-size: var(--text-size-title);
+            }
+        }
+
+        span {
+            font-size: var(--text-size-default);
+            line-height: 1.5;
+        }
+    }
+
+    &__call-action {
+        padding: var(--three-spacing) var(--two-spacing);
+        box-shadow: var(--shadow-dark-bottom);
+        -webkit-box-shadow: var(--shadow-dark-bottom);
+        -moz-box-shadow: var(--shadow-dark-bottom);
+        background-color: var(--bg-slategray);
+        border-top: solid var(--quarter-spacing) var(--bg-primary);
+        border-radius: 0 0 0 var(--quarter-spacing);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--half-spacing);
+
+        @media screen and (max-width:800px) {
+            margin: 0 0 0 var(--default-spacing);
+            padding: var(--default-spacing);
+        }
+
+        .action-link {
+            background-color: var(--bg-primary);
+            padding: var(--half-spacing) var(--two-spacing);
+            text-transform: uppercase;
+            font-family: var(--font-title);
+            font-weight: bold;
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--quarter-spacing);
+        }
+    }
+}
