@@ -1,0 +1,50 @@
+.cards {
+    padding: var(--two-spacing);
+
+    @media screen and (max-width:800px) {
+        padding: var(--default-spacing);
+    }
+
+    &.cards-gray {
+        background-color: var(--bg-slategray);
+        border-radius: var(--quarter-spacing);
+    }
+
+    &__title {
+        font-family: var(--font-title);
+        font-size: var(--text-size-subtitle);
+        font-weight: bold;
+        color: var(--text-primary);
+    }
+
+    &__description {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+        flex: 1;
+
+        @media screen and (max-width:800px) {
+            font-size: var(--text-size-default);
+            margin-top: 0;
+        }
+    }
+
+    &__meta {
+        border-top: solid 2px var(--bg-dark);
+        margin: var(--default-spacing) 0 0 0;
+        padding: var(--half-spacing) 0 0 0;
+        color: var(--text-lightgray);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--default-spacing);
+
+        > .divider {
+            color: var(--text-dark);
+            font-size: var(--text-size-default);
+            font-weight: bold;
+        }
+    }
+}

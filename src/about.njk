@@ -1,8 +1,47 @@
 ---
-title: "About"
+title: "All About This Website"
 ---
 
-<section class="about-page">
+{% include '_content/page-header.njk' %}
+
+
+<section class="page-content">
+   <div class="page-content__details">
+        <section class="page-content__details-list">
+            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+                {% if markdownContent.templateContent %}
+                    <article>
+                        {% if markdownContent.data.title %}
+                        <h2>
+                            <a id="{{ markdownContent.data.title | slugify }}"></a>
+                            {{ markdownContent.data.title }}
+                        </h2>
+                        {% endif %}
+                        {{ markdownContent.templateContent | safe }}
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </section>
+   </div>
+    <div class="page-content__toc cards cards-gray">
+        <h6 class="page-content__toc-title">Table Of Contents</h6>
+        <ul class="page-content__toc-anchors">
+            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+                {% if markdownContent.data.title %}
+                    <li><a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="page-content__sidebar">
+        <small>[ Sponsorship and Ads ]</small>
+    </div>
+</section>
+
+
+
+
+{# <section class="about-page">
     <section class="about-page__content">
         <div class="about-page__content-header">
             <h1>{{title}}</h1>
@@ -33,10 +72,7 @@ title: "About"
         {% endif %}
         {% endfor %}
     </section>
-    {# <section class="about-page__callout-actions container-block">
-        Callout Actions here...
-    </section> #}
     <aside>
         {% include '_content/article-category-cards.njk' %}
     </aside>
-</section>
+</section> #}

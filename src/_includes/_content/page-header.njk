@@ -1,0 +1,29 @@
+<section class="page-header">
+    <section class="page-header__title">
+        <h1>{{ title }}</h1>
+        {% if description %}
+        <span>{{ description }}</span>
+        {% endif %}
+    </section>
+    <section class="page-header__call-action">
+        <a href="/docs" class="action-link small">
+            <i class="fa-solid fa-book"></i>
+            <span>Documentations</span>
+        </a>
+        <a href="/articles" class="action-link small">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Articles</span>
+        </a>
+        <a href="/projects" class="action-link small">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>Projects</span>
+        </a>
+        {# <a href="{{siteGitHubRepository}}" target="_blank" class="action-link small">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+        </a> #}
+    </section>
+    <section class="page-header__divider">
+        <div class="page-header__divider-filler"></div>
+    </section>
+</section>
