@@ -1,6 +1,7 @@
 ---
-title: fdtechdotnet
-lastDateUpdated: 2024-01-04
+title: Fullstack-dev Technology
+shortcode: fdtechdotnet
+date: 2024-01-04
 ---
 
 

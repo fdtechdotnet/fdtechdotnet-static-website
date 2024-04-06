@@ -2,59 +2,41 @@
 layout: _base.njk
 ---
 
-<section class="articles-header">
-    <div class="container">
-        <small class="articles-breadcrumb">
-            <ul>
-                <li class="articles-breadcrumb__item">
-                    <a href="/projects">Projects</a>
-                </li>
-                <li class="articles-breadcrumb__divider">
-                    <i class="fa-solid fa-angles-right"></i>
-                </li>
-                <li class="articles-breadcrumb__item">{{ shortcode }}</li>
-            </ul>
-        </small>
-        <h1 class="articles-header__title">{{ title }}</h1>
-        {% if date %}
-            <small>Published on {{ date | localeDate }}</small>
+{% include '_content/page-header.njk' %}
+
+<section class="page-content">
+   <div class="page-content__details">
+        {% if featuredImage %}
+        <figure class="featured-figure">
+            <img src="{{ featuredImage }}" alt="{{ featuredImageCaption }}">
+            <figcaption>{{ featuredImageCaption }}</figcaption>
+        </figure>
         {% endif %}
+        <section class="page-content__details-view">
+            {{ content | safe }}
+        </section>
+        <div class="page-content__divider"></div>
+        <section class="page-content__giscus">
+            <div class="giscus giscus-frame"></div>
+            <script src="https://giscus.app/client.js"
+                data-repo="fdtechdotnet/fdtechdotnet-static-website"
+                data-repo-id="R_kgDOJKvtLA"
+                data-category="Articles"
+                data-category-id="DIC_kwDOJKvtLM4CeTrF"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="dark"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </section>
+   </div>
+    <div class="page-content__toc cards cards-gray">
+        <h6 class="page-content__toc-title">Table Of Contents</h6>
+        {{ content | toc | safe }}
     </div>
 </section>
-
-<section class="container articles-entry">
-    <aside>
-        <div class="articles-entry__toc">
-            <h6>Jump to:</h6>
-            {{ content | toc | safe }}
-        </div>
-    </aside>
-    <article class="articles-entry__content">
-        {% if featuredImage %}
-            <figure class="articles-entry__content-featured-image">
-                <img src="{{ featuredImage }}" alt="Featured Image">
-                <figcaption>Figure  01 - {{ featuredImageCaption }}</figcaption>
-            </figure>
-        {% endif %}
-        {{ content | safe }}
-        <div class="giscus-area">
-            <div class="giscus giscus-frame"></div>
-        </div>
-    </article>
-</section>
-
-<script src="https://giscus.app/client.js"
-        data-repo="cristianmayo/fdtechdotnet"
-        data-repo-id="R_kgDOJKvtLA"
-        data-category="Documentations"
-        data-category-id="DIC_kwDOJKvtLM4CYXBj"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="dark"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
