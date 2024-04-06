@@ -33,6 +33,20 @@
             padding: var(--two-spacing) var(--default-spacing);
         }
 
+        > ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: var(--default-spacing);
+            color: var(--text-lightgray);
+            text-transform: uppercase;
+            font-weight: bold;
+
+            a {
+                color: var(--text-lightgray);
+            }
+        }
+
         h1 {
             text-transform: capitalize;
             color: #fff;
@@ -113,8 +127,6 @@
 
         @media screen and (max-width:800px) {
             margin: 0 var(--default-spacing) 0 0;
-            // display: none;
         }
-
     }
 }

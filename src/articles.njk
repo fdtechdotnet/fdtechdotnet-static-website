@@ -11,31 +11,23 @@ description: "Curated learning notes, insights and perspective, book and technol
    <div class="page-content__details">
         <section class="article-list">
             {% for post in collections.articles | sortedCollectionByDateDesc %}
-            <article class="article-list__item">
-                <a href="{{ post.url }}" class="article-list__item-title">{{ post.data.title }}</a>
-                <div class="article-list__item-meta small">
-                    <span><strong>{{ post.data.category }}</strong></span>
-                    <span class="divider"> | </span>
-                    <span>Published on {{ post.data.date | localeDate }}</span>
-                </div>
-                <a href="{{ post.url }}" class="article-list__item-excerpt">
-                    {% if post.data.description %}
-                        {{ post.data.description | excerpt }}
-                    {% else %}
-                        {{ post.templateContent | excerpt }}
-                    {% endif %}
-                </a>
-            </article>
+            <a href="{{ post.url }}" class="article-list__item">
+                <article>
+                    <h3 class="article-list__item-title">{{ post.data.title }}</h3>
+                    <div class="article-list__item-meta small">Published on {{ post.data.date | localeDate }}</div>
+                    <span class="article-list__item-excerpt">
+                        {% if post.data.description %}
+                            {{ post.data.description | excerpt }}
+                        {% else %}
+                            {{ post.templateContent | excerpt }}
+                        {% endif %}
+                    </span>
+                </article>
+            </a>
             {% endfor %}
         </section>
     </div>
-    <div class="page-content__sidebar cards cards-gray">
-        {% include '_content/article-category-list.njk' %}
-    </div>
     <div class="page-content__sidebar">
-        {% include '_content/article-subcategory-list.njk' %}
-    </div>
-    <div class="page-content__sidebar">
-        <small>[ Support and Donation ]</small>
+        {% include '_content/cards/category-cards.njk' %}
     </div>
 </section>

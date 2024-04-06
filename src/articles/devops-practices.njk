@@ -6,18 +6,20 @@ description: "Start implementing build, test, deployment with automations and
 
 {% if collections.devopspractices.length > 0 %}
     {% for post in collections.devopspractices | sortedCollectionByDateDesc %}
-        <article class="article-entry">
-            <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
-            <p class="article-entry__meta small">Published on {{ post.data.date | localeDate }}</p>
-            <a href="{{ post.url }}" class="article-entry__excerpt">
-                {% if post.data.description %}
-                    {{ post.data.description | excerpt }}
-                {% else %}
-                    {{ post.templateContent | excerpt }}
-                {% endif %}
-            </a>
-        </article>
+        <a href="{{ post.url }}" class="article-list__item">
+            <article>
+                <h3 class="article-list__item-title">{{ post.data.title }}</h3>
+                <div class="article-list__item-meta small">Published on {{ post.data.date | localeDate }}</div>
+                <span class="article-list__item-excerpt">
+                    {% if post.data.description %}
+                        {{ post.data.description | excerpt }}
+                    {% else %}
+                        {{ post.templateContent | excerpt }}
+                    {% endif %}
+                </span>
+            </article>
+        </a>
     {% endfor %}
 {% else %}
-    <span class="article-post-notice">No post have been made yet...</span>
+    <span class="article-list__notice">No post have been made yet...</span>
 {% endif %}

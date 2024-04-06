@@ -5,6 +5,19 @@
     margin: 0 0 0 var(--two-spacing);
 
     &__item {
+        color: var(--text-light);
+
+        &:hover {
+            color: #fff;
+        }
+
+        &:visited {
+            color: var(--text-light);
+
+            &:hover {
+                color: #fff;
+            }
+        }
 
         &-title {
             color: var(--text-primary);
@@ -25,142 +38,24 @@
 
         &-excerpt {
             line-height: 1.5;
-            color: var(--text-light);
+            // color: var(--text-light);
             display: block;
-
-            @media screen and (max-width:800px) {
-                font-size: var(--text-size-default);
-            }
-
-            &:visited {
-                color: var(--text-light);
-            }
-
-            &:hover {
-                color: #fff;
-            }
-        }
-    }
-}
-
-
-
-.articles-page {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    justify-items: stretch;
-    gap: var(--three-spacing);
-
-    @media screen and (max-width:800px) {
-        display: flex;
-        flex-direction: column;
-        gap: var(--two-spacing);
-    }
-
-    &__articles-list {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        gap: var(--two-spacing);
-        grid-column: 1;
-        grid-row: span 3;
-
-        .articles-list {
-
-            &__header {
-                background-color: var(--bg-primary);
-                padding: var(--three-spacing) var(--two-spacing);
-                border-top-right-radius: 0.25rem;
-                border-bottom-right-radius: 0.25rem;
-
-                @media screen and (max-width:800px) {
-                    padding: var(--two-spacing) var(--default-spacing);
-                    margin-right: var(--default-spacing);
-                }
-
-                > h1 {
-                    color: #fff;
-                    padding: 0;
-                    margin: 0;
-                }
-            }
-
-            &__entry {
-                margin: 0 0 0 var(--two-spacing);
-                padding: 0;
-
-                @media screen and (max-width:800px) {
-                    margin: 0 0 0 var(--default-spacing);
-                    padding: 0 var(--default-spacing) 0 0;
-                }
-
-                &:nth-child(2) {
-                    padding: var(--two-spacing) 0 0 0;
-                    border-top: solid var(--bg-primary) var(--half-spacing);
-                }
-
-                .article-entry {
-
-                    &__title {
-                        color: var(--text-primary);
-                        font-size: var(--text-size-lg);
-                        font-family: var(--font-title);
-                        font-weight: bold;
-                        display: block;
-
-                        &:visited, &:hover {
-                            color: var(--text-primary);
-                        }
-                    }
-
-                    &__meta {
-                        color: var(--text-lightgray);
-                        padding-bottom: calc(var(--default-spacing)/2);
-                    }
-
-                    &__excerpt {
-                        line-height: 1.5;
-                        color: var(--text-light);
-                        display: block;
-
-                        @media screen and (max-width:800px) {
-                            font-size: var(--text-size-default);
-                        }
-
-                        &:visited {
-                            color: var(--text-light);
-                        }
-
-                        &:hover {
-                            color: #fff;
-                        }
-                    }
-                }
-            }
         }
     }
 
-    &__callout-actions {
-        grid-column: 2;
-        margin: 0 var(--two-spacing) 0 0;
-
-        @media screen and (max-width:800px) {
-            margin: 0 var(--default-spacing);
-        }
-    }
-
-    > aside {
+    &__notice {
+        border-left: solid 1rem var(--bg-lightgray);
+        padding: var(--half-spacing) var(--default-spacing);
+        margin: 0;
+        color: var(--text-light);
         display: flex;
         flex-direction: column;
-        gap: var(--two-spacing);
-        padding: 0 var(--two-spacing) 0 0;
-        grid-column: 2;
+        gap: var(--default-spacing);
+        max-width: 750px;
 
-        @media screen and (max-width:800px) {
-            padding: 0 var(--default-spacing);
+        p {
+            padding: 0;
+            margin: 0;
         }
     }
 }

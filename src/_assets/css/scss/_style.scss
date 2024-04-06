@@ -50,6 +50,7 @@
 * {
     box-sizing: content-box !important;
 }
+
 body {
     background-color: var(--bg-dark);
     font-family: 'Montserrat', Verdana;
@@ -153,8 +154,10 @@ table {
     box-shadow: var(--shadow-dark-bottom);
     -webkit-box-shadow: var(--shadow-dark-bottom);
     -moz-box-shadow: var(--shadow-dark-bottom);
-    padding: 0;
     margin: 0 0 var(--two-spacing) 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
 
     & thead, & tbody, & th, & tr, & td {
         padding: var(--half-spacing) var(--default-spacing);

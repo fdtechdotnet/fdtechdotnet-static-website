@@ -1,7 +1,7 @@
 {
-  "name": "fdtechdotnet",
+  "name": "fdtechdotnet-static-website",
   "version": "1.0.0",
-  "description": "Fullstack-dev Technology",
+  "description": "Fullstack-dev Technology: The Static Website",
   "main": "src/index.njk",
   "scripts": {
     "start": "eleventy --serve",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cristianmayo/fdtechdotnet.git"
+    "url": "git+https://github.com/fdtechdotnet/fdtechdotnet-static-website.git"
   },
   "keywords": [
     "11ty",
@@ -20,9 +20,9 @@
   "author": "cristianmayo",
   "license": "MIT License",
   "bugs": {
-    "url": "https://github.com/cristianmayo/fdtechdotnet/issues"
+    "url": "https://github.com/fdtechdotnet/fdtechdotnet-static-website/issues"
   },
-  "homepage": "https://github.com/cristianmayo/fdtechdotnet#readme",
+  "homepage": "https://github.com/fdtechdotnet/fdtechdotnet-static-website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",

@@ -2,30 +2,15 @@
 layout: _base.njk
 ---
 
-<section class="articles-category-page">
+{% include '_content/page-header.njk' %}
 
-    <section class="articles-category-page__content">
-        <div class="articles-category-page__content-header">
-            <ul class="small">
-                <li><a href="/articles">Articles</a></li>
-                <li class="articles-breadcrumb__divider"><i class="fa-solid fa-angles-right"></i></li>
-                <li class="articles-breadcrumb__item">Category</li>
-            </ul>
-            <h1>{{ title }}</h1>
-            {% if description %}<span class>{{ description }}</small>{% endif %}
-        </div>
-        <div class="articles-category-page__content-list">
+<section class="page-content">
+   <div class="page-content__details">
+        <section class="article-list">
             {{ content | safe }}
-        </div>
-    </section>
-
-    {# <section class="articles-category-page__callout-actions container-block">
-        Callout Actions here...
-    </section> #}
-
-    <aside>
-        {% include '_content/article-category-list.njk' %}
-        {% include '_content/article-subcategory-list.njk' %}
-    </aside>
-
+        </section>
+    </div>
+    <div class="page-content__sidebar">
+        {% include '_content/cards/category-cards.njk' %}
+    </div>
 </section>

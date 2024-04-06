@@ -2,33 +2,21 @@
 layout: _base.njk
 ---
 
-<section class="article-view-page">
+{% include '_content/page-header.njk' %}
 
-    <section class="article-view-page__content">
-        <section class="article-view-page__content-header">
-            <ul class="small">
-                <li><a href="/articles">Articles</a></li>
-                <li class="articles-breadcrumb__divider"><i class="fa-solid fa-angles-right"></i></li>
-                <li class="articles-breadcrumb__item">{{ category }}</li>
-            </ul>
-            <h1>{{ title }}</h1>
-            {% if date %}<small>Published on {{ date | localeDate }}</small>{% endif %}
-        </section>
-        <section class="article-view-page__content-toc">
-            <h6>Table Of Contents</h6>
-            {{ content | toc | safe }}
-            <ul>
-        </section>
+<section class="page-content">
+   <div class="page-content__details">
         {% if featuredImage %}
-        <figure class="article-view-page__content-featured-image">
-            <img src="{{ featuredImage }}" alt="Featured Image">
-            <figcaption>Figure-01: {{ featuredImageCaption }}</figcaption>
+        <figure class="featured-figure">
+            <img src="{{ featuredImage }}" alt="{{ featuredImageCaption }}">
+            <figcaption>{{ featuredImageCaption }}</figcaption>
         </figure>
         {% endif %}
-        <section class="article-view-page__content-details">
+        <section class="page-content__details-view">
             {{ content | safe }}
         </section>
-        <section class="article-view-page__content-giscus">
+        <div class="page-content__divider"></div>
+        <section class="page-content__giscus">
             <div class="giscus giscus-frame"></div>
             <script src="https://giscus.app/client.js"
                 data-repo="cristianmayo/fdtechdotnet"
@@ -46,15 +34,9 @@ layout: _base.njk
                 async>
             </script>
         </section>
-    </section>
-
-    {# <section class="articles-category-page__callout-actions container-block">
-        Callout Actions here...
-    </section> #}
-
-    <aside>
-        {% include '_content/article-category-list.njk' %}
-        {% include '_content/article-subcategory-list.njk' %}
-    </aside>
-
+   </div>
+    <div class="page-content__toc cards cards-gray">
+        <h6 class="page-content__toc-title">Table Of Contents</h6>
+        {{ content | toc | safe }}
+    </div>
 </section>

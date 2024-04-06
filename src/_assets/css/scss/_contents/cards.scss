@@ -8,6 +8,11 @@
     &.cards-gray {
         background-color: var(--bg-slategray);
         border-radius: var(--quarter-spacing);
+    }
+
+    &.cards-link {
+        background-color: var(--bg-slategray);
+        border-radius: var(--quarter-spacing);
 
         &:hover {
             box-shadow: var(--shadow-dark-bottom);
@@ -23,6 +28,7 @@
 
     &__description {
         font-size: small;
+        color: var(--text-lightgray);
         margin: 0;
         padding: 0;
         flex: 1;

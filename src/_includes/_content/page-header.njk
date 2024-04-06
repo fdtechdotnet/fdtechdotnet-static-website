@@ -1,9 +1,15 @@
 <section class="page-header">
     <section class="page-header__title">
-        <h1>{{ title }}</h1>
-        {% if description %}
-        <span>{{ description }}</span>
+        {% if category %}
+        <ul class="small">
+            <li><a href="/articles">Articles</a></li>
+            <li class="articles-breadcrumb__divider"><i class="fa-solid fa-angles-right"></i></li>
+            <li class="articles-breadcrumb__item">Category</li>
+        </ul>
         {% endif %}
+        <h1>{{ title }}</h1>
+        {% if description %}<span>{{ description }}</span>{% endif %}
+        {% if date %}<small>Published on {{ date | localeDate }}</small>{% endif %}
     </section>
     <section class="page-header__call-action">
         <a href="/docs" class="action-link small">

@@ -33,46 +33,4 @@ title: "All About This Website"
             {% endfor %}
         </ul>
     </div>
-    <div class="page-content__sidebar">
-        <small>[ Support and Donation ]</small>
-    </div>
 </section>
-
-
-
-
-{# <section class="about-page">
-    <section class="about-page__content">
-        <div class="about-page__content-header">
-            <h1>{{title}}</h1>
-        </div>
-         <section class="about-page__content-toc">
-            <h6>Table Of Contents</h6>
-            <ul>
-            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
-            {% if markdownContent.data.title %}
-                <li class="about-page__content-anchor">
-                    <a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a>
-                </li>
-            {% endif %}
-            {% endfor %}
-            </ul>
-        </section>
-        {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
-        {% if markdownContent.templateContent %}
-            <article class="about-page__content-entry">
-                {% if markdownContent.data.title %}
-                <h2>
-                    <a id="{{ markdownContent.data.title | slugify }}"></a>
-                    {{ markdownContent.data.title }}
-                </h2>
-                {% endif %}
-                {{ markdownContent.templateContent | safe }}
-            </article>
-        {% endif %}
-        {% endfor %}
-    </section>
-    <aside>
-        {% include '_content/article-category-cards.njk' %}
-    </aside>
-</section> #}

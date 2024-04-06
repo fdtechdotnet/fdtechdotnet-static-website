@@ -5,7 +5,6 @@ tags:
   - mockup-content
   - typography
 date: 2024-03-28
-draft: 2024-03-28
 ---
 
 # Heading 1
