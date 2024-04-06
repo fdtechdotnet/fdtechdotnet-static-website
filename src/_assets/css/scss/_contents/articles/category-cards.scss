@@ -1,0 +1,9 @@
+.category-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--two-spacing);
+
+    @media screen and (max-width:800px) {
+        gap: var(--default-spacing);
+    }
+}

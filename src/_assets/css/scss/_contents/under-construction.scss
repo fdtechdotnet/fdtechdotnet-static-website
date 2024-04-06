@@ -1,0 +1,34 @@
+.under-construction {
+    border-left: solid 1rem var(--bg-primary);
+    padding: 0 0  0 var(--default-spacing);
+    margin: 0 0 0 var(--two-spacing);
+
+    @media screen and (max-width:800px) {
+        margin: 0 var(--default-spacing);
+    }
+
+    > h1 {
+        text-transform: capitalize;
+        font-family: var(--font-title);
+        font-size: var(--text-size-xl);
+        font-weight: bold;
+        margin: 0 0 var(--default-spacing) 0;
+        padding: 0;
+    }
+
+    > div {
+        border-left: solid 1rem var(--bg-lightgray);
+        padding: 0 0 0 var(--default-spacing);
+        margin: 0;
+        color: var(--text-light);
+        display: flex;
+        flex-direction: column;
+        gap: var(--default-spacing);
+        max-width: 750px;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

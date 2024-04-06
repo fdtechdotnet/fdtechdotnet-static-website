@@ -89,5 +89,6 @@
       "title": "img",
       "path": "[[workspace]]/src/_assets/img"
     }
-  ]
+  ],
+  "frontMatter.dashboard.openOnStart": true
 }

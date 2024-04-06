@@ -8,6 +8,10 @@
     &.cards-gray {
         background-color: var(--bg-slategray);
         border-radius: var(--quarter-spacing);
+
+        &:hover {
+            box-shadow: var(--shadow-dark-bottom);
+        }
     }
 
     &__title {
@@ -18,13 +22,12 @@
     }
 
     &__description {
+        font-size: small;
         margin: 0;
         padding: 0;
-        font-size: small;
         flex: 1;
 
         @media screen and (max-width:800px) {
-            font-size: var(--text-size-default);
             margin-top: 0;
         }
     }

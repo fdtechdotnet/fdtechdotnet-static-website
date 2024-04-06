@@ -32,7 +32,17 @@ nav {
                 color: var(--text-white);
                 text-decoration: none;
             }
+
+            > svg[class*="fa-"] {
+                margin-left: var(--quarter-spacing);
+            }
         }
+
+        // &:last-of-type a {
+        //     border: solid 3px var(--bg-primary);
+        //     background-color: var(--bg-primary);
+        //     border-radius: var(--quarter-spacing);
+        // }
     }
 
 }

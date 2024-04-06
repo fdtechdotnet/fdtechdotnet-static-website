@@ -67,8 +67,9 @@
 
         @media screen and (max-width:800px) {
             order: 1;
-            padding: var(--default-spacing) var(--two-spacing);
-            margin: 0 0 0 var(--default-spacing);
+            border-radius: unset;
+            padding: var(--default-spacing);
+            margin: 0;
         }
 
         .action-link {
@@ -86,13 +87,17 @@
             padding: var(--half-spacing) 0;
             color: var(--text-lightgray);
 
+            @media screen and (max-width:800px) {
+
+            }
+
             &:hover {
                 color: var(--text-primary);
             }
 
             > svg[class*="fa-"] {
                 font-size: var(--text-size-title);
-                width: var(--text-size-title);
+                width: 50px;
                 aspect-ratio: 1/1;
             }
         }
@@ -108,6 +113,7 @@
 
         @media screen and (max-width:800px) {
             margin: 0 var(--default-spacing) 0 0;
+            // display: none;
         }
 
     }

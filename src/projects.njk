@@ -2,25 +2,33 @@
 title: Projects
 ---
 
-{% include '_page-callout.njk' %}
+{% include '_content/page-header.njk' %}
 
-<section class="recent-posts">
-    <h5 class="recent-posts__title">Recent Projects</h5>
-    <div class="recent-posts__entries">
-        <div class="entry-posts">
-            {% for post in collections.projects | sort(false, false, date) %}
-                <article class="entry-posts__ite">
-                    <a href="{{ post.url }}" class="entry-posts__item-title">{{ post.data.title }}</a>
-                    <div class="entry-posts__item-meta small">Last date updated on {{ post.data.lastDateUpdated | localeDate }}</div>
-                    <a href="{{ post.url }}" class="entry-posts__item-excerpt">
-                        {% if post.data.description %}
-                            {{ post.data.description | excerpt }}
-                        {% else %}
-                            {{ post.templateContent | excerpt }}
-                        {% endif %}
-                    </a>
-                </article>
-            {% endfor %}
-        </div>
+<section class="page-content">
+   <div class="page-content__details">
+        {% include '_content/section-under-construction.njk' %}
+        {# <section class="recent-posts">
+            <h5 class="recent-posts__title">Recent Projects</h5>
+            <div class="recent-posts__entries">
+                <div class="entry-posts">
+                    {% for post in collections.projects | sort(false, false, date) %}
+                        <article class="entry-posts__ite">
+                            <a href="{{ post.url }}" class="entry-posts__item-title">{{ post.data.title }}</a>
+                            <div class="entry-posts__item-meta small">Last date updated on {{ post.data.lastDateUpdated | localeDate }}</div>
+                            <a href="{{ post.url }}" class="entry-posts__item-excerpt">
+                                {% if post.data.description %}
+                                    {{ post.data.description | excerpt }}
+                                {% else %}
+                                    {{ post.templateContent | excerpt }}
+                                {% endif %}
+                            </a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section> #}
+   </div>
+    <div class="page-content__sidebar">
+        <small>[ Support and Donation ]</small>
     </div>
 </section>

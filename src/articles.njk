@@ -1,36 +1,41 @@
 ---
 title: Articles
+description: "Curated learning notes, insights and perspective, book and technology reviews
+    related to full-stack web application development and delivery
+    with cloud service infrastructure."
 ---
 
-<section class="articles-page">
-    <section class="articles-page__articles-list">
-        <section class="articles-list__header">
-            <h1>{{title}}</h1>
+{% include '_content/page-header.njk' %}
+
+<section class="page-content">
+   <div class="page-content__details">
+        <section class="article-list">
+            {% for post in collections.articles | sortedCollectionByDateDesc %}
+            <article class="article-list__item">
+                <a href="{{ post.url }}" class="article-list__item-title">{{ post.data.title }}</a>
+                <div class="article-list__item-meta small">
+                    <span><strong>{{ post.data.category }}</strong></span>
+                    <span class="divider"> | </span>
+                    <span>Published on {{ post.data.date | localeDate }}</span>
+                </div>
+                <a href="{{ post.url }}" class="article-list__item-excerpt">
+                    {% if post.data.description %}
+                        {{ post.data.description | excerpt }}
+                    {% else %}
+                        {{ post.templateContent | excerpt }}
+                    {% endif %}
+                </a>
+            </article>
+            {% endfor %}
         </section>
-        {% for post in collections.articles | sortedCollectionByDateDesc %}
-        <article class="articles-list__entry">
-            <a href="{{ post.url }}" class="article-entry__title">{{ post.data.title }}</a>
-            <div class="article-entry__meta small">
-                <span><strong>{{ post.data.category }}</strong></span>
-                <span class="divider"> | </span>
-                <span>Published on {{ post.data.date | localeDate }}</span>
-            </div>
-            <a href="{{ post.url }}" class="article-entry__excerpt">
-                {% if post.data.description %}
-                    {{ post.data.description | excerpt }}
-                {% else %}
-                    {{ post.templateContent | excerpt }}
-                {% endif %}
-            </a>
-        </article>
-        {% endfor %}
-    </section>
-    {# <section class="articles-page__callout-actions container-block">
-        Callout Actions here...
-    </section> #}
-    <aside>
-        {% include '_content/article-category-cards.njk' %}
+    </div>
+    <div class="page-content__sidebar cards cards-gray">
         {% include '_content/article-category-list.njk' %}
+    </div>
+    <div class="page-content__sidebar">
         {% include '_content/article-subcategory-list.njk' %}
-    </aside>
+    </div>
+    <div class="page-content__sidebar">
+        <small>[ Support and Donation ]</small>
+    </div>
 </section>
