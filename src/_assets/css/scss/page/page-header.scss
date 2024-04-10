@@ -35,7 +35,7 @@
     }
 
     &__category {
-        margin: 0;
+        margin: 0 0 var(--half-spacing) 0;
         padding: 0;
         display: flex;
         gap: var(--default-spacing);
@@ -56,11 +56,13 @@
         margin: 0;
 
         @media screen and (max-width:800px) {
-            font-size: var(--text-size-title);
+            font-size: var(--text-size-lg);
+            line-height: var(--text-size-xl);
         }
     }
 
     &__published-date {
+        margin: var(--default-spacing) 0 0 0;
         font-size: var(--text-size-small);
     }
 

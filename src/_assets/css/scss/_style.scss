@@ -27,9 +27,9 @@
 
     --text-size-small: 0.9rem;
     --text-size-default: 1rem;
+    --text-size-subtitle: 1.25rem;
     --text-size-title: 1.5rem;
-    --text-size-subtitle: 1.2rem;
-    --text-size-lg: 1.5rem;
+    --text-size-lg: 1.75rem;
     --text-size-xl: 2rem;
 
     --text-primary: #0954ff;
@@ -48,8 +48,8 @@
     --shadow-dark-top: 0 -2rem 3rem var(--shadow-dark-bg);
 }
 
-* {
-    box-sizing: content-box !important;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -60,13 +60,6 @@ body {
     min-width: var(--device-width-sm);
     padding: 0;
     margin: 0;
-}
-
-nav, header, main, footer, section, article, .container {
-    -webkit-transition: width 500ms ease-in-out;
-    -moz-transition: width 500ms ease-in-out;
-    -o-transition: width 500ms ease-in-out;
-    transition: width 500ms ease-in-out;
 }
 
 article, p {
