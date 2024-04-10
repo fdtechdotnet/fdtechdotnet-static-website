@@ -58,37 +58,21 @@
           "name": "lastDateUpdated",
           "type": "datetime"
         },
-        {
-          "title": "subcategories",
-          "name": "subcategories",
-          "type": "choice",
-          "choices": [
-            "Perspective"
-          ]
-        }
       ]
     }
   ],
   "frontMatter.framework.id": "11ty",
   "frontMatter.preview.host": "http://localhost:8080",
   "frontMatter.taxonomy.tags": [
-    "fdtechdotnet"
+    "articles",
+    "docs",
+    "projects"
   ],
   "frontMatter.taxonomy.categories": [
     "Cloud Infrastructure",
     "DevOps Practices",
-    "Fullstack-dev Technology",
     "WebApp Development"
   ],
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "_assets",
-      "path": "[[workspace]]/src/_assets"
-    },
-    {
-      "title": "img",
-      "path": "[[workspace]]/src/_assets/img"
-    }
-  ],
+  "frontMatter.content.pageFolders": [],
   "frontMatter.dashboard.openOnStart": true
 }

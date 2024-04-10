@@ -10,7 +10,7 @@ description: "Curated learning notes, insights and perspective, book and technol
 <section class="page-content">
    <div class="page-content__details">
         <section class="article-list">
-            {% for post in collections.articles | sortedCollectionByDateDesc %}
+            {% for post in collections.publishedArticles | sortedCollectionByDateDesc %}
             <a href="{{ post.url }}" class="article-list__item">
                 <article>
                     <h3 class="article-list__item-title">{{ post.data.title }}</h3>

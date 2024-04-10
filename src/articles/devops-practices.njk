@@ -4,8 +4,9 @@ description: "Start implementing build, test, deployment with automations and
     known practices between development and operations."
 ---
 
-{% if collections.devopspractices.length > 0 %}
-    {% for post in collections.devopspractices | sortedCollectionByDateDesc %}
+{%- set categoryArticles = collections.articles | articlesByCategoryTag('devops-practices') -%}
+{% if categoryArticles.length > 0 %}
+    {% for post in categoryArticles %}
         <a href="{{ post.url }}" class="article-list__item">
             <article>
                 <h3 class="article-list__item-title">{{ post.data.title }}</h3>

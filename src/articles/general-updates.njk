@@ -1,10 +1,8 @@
 ---
-title: "WebApp Development"
-description: "Familiarize with full-stack web application development by learning
-    front-end client and back-end service application development."
+title: "General Updates"
 ---
 
-{%- set categoryArticles = collections.articles | articlesByCategoryTag('webapp-development') -%}
+{%- set categoryArticles = collections.articles | articlesByCategoryTag('general-updates') -%}
 {% if categoryArticles.length > 0 %}
     {% for post in categoryArticles %}
         <a href="{{ post.url }}" class="article-list__item">
@@ -24,5 +22,3 @@ description: "Familiarize with full-stack web application development by learnin
 {% else %}
     <span class="article-list__notice">No post have been made yet...</span>
 {% endif %}
-
-

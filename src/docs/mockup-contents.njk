@@ -1,31 +1,40 @@
 ---
-title: "All About This Website"
+title: "Mockup Contents"
 ---
 
 {% include '_content/page-header.njk' %}
 
+{%- set docs = collections.docs | documentationsByTag('mockup-content') -%}
 <section class="page-content">
    <div class="page-content__details">
+        <div class="page-content__overview">
+            <p>
+                Let's embark on a collaborative learning experience in a full-stack web application development and
+                delivery with cloud service infrastructures. Together, we'll unravel the complexities of
+                cloud-based development, from inception to deployment. Join me in learning exploration and
+                discussions, where knowledge flows freely and innovation thrives. Whether you're a novice
+                or seasoned developer, there's always something new to discover and to share.
+            </p>
+        </div>
+        {% if docs.length > 0 %}
         <section class="page-content__details-list">
-            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+            {% for markdownContent in docs %}
                 {% if markdownContent.templateContent %}
                     <article>
                         {% if markdownContent.data.title %}
-                        <h1>
-                            <a id="{{ markdownContent.data.title | slugify }}"></a>
-                            {{ markdownContent.data.title }}
-                        </h1>
+                            <h1 id="{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</h1>
                         {% endif %}
                         {{ markdownContent.templateContent | safe }}
                     </article>
                 {% endif %}
             {% endfor %}
         </section>
+        {% endif %}
    </div>
     <div class="page-content__toc cards cards-gray">
         <h6 class="page-content__toc-title">Table Of Contents</h6>
         <ul class="page-content__toc-anchors">
-            {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
+            {% for markdownContent in docs %}
                 {% if markdownContent.data.title %}
                     <li>
                         <a href="#{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</a>

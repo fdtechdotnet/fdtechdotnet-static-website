@@ -1,0 +1,6 @@
+{
+    "layout": "_base-article-view-page.njk",
+    "permalink": "articles/general-updates/{{ title | slugify }}/",
+    "tags": ["articles", "general-updates"],
+    "category": "General Updates"
+}

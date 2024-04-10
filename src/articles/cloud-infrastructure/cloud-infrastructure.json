@@ -1,6 +1,6 @@
 {
     "layout": "_base-article-view-page.njk",
     "permalink": "articles/cloud-infrastructure/{{ title | slugify }}/",
-    "tags": ["articles", "cloudinfrastructure"],
+    "tags": ["articles", "cloud-infrastructure"],
     "category": "Cloud Infrastructure"
 }

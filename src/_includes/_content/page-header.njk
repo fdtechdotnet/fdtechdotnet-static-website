@@ -1,8 +1,15 @@
 <section class="page-header">
-    <section class="page-header__title">
-        {% if date %}<small>Published on {{ date | localeDate }}</small>{% endif %}
-        <h1>{{ title }}</h1>
-        {% if description %}<span>{{ description }}</span>{% endif %}
+    <section class="page-header__title-section">
+        {% if category %}
+        <ul class="page-header__category">
+            <li><a href="/articles">Articles</a></li>
+            <li>»</li>
+            <li>{{ category }}</li>
+        </ul>
+        {% endif %}
+        <h1 class="page-header__title">{{ title }}</h1>
+        {% if date %}<div class="page-header__published-date">Published on {{ date | localeDate }}</div>{% endif %}
+        {% if description %}<span class="page-header__description">{{ description }}</span>{% endif %}
     </section>
     <section class="page-header__call-action">
         <a href="/docs" class="action-link small">
@@ -18,7 +25,7 @@
             <span>Projects</span>
         </a>
     </section>
-    <section class="page-header__divider">
+    {# <section class="page-header__divider">
         <div class="page-header__divider-filler"></div>
-    </section>
+    </section> #}
 </section>

@@ -1,6 +1,6 @@
 {
     "layout": "_base-article-view-page.njk",
     "permalink": "articles/webapp-development/{{ title | slugify }}/",
-    "tags": ["articles", "webappdevelopment"],
+    "tags": ["articles", "webapp-development"],
     "category": "WebApp Development"
 }

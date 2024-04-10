@@ -77,17 +77,35 @@ module.exports = function(config) {
     });
 
     /* =========================  Articles Config ======================== */
-    config.addCollection("publishedArticles", (collection) => { return _
-        .chain(collection.getAllSorted())
-        .filter((doc) => doc.url && doc.inputPath.startsWith('./src/articles/')  && !doc.data.draft)
+    config.addCollection("publishedArticles", (collection) => _.chain(collection.getAllSorted())
+        .filter((article) => article.url && article.inputPath.startsWith('./src/articles/')
+            && article.data['tags'] && article.data['tags'].includes('articles')
+            && !article.data['draft']
+        )
         .reverse()
-        .value();
+        .value()
+    );
+
+    config.addNunjucksFilter("articlesByCategoryTag", (collection, value) => {
+        return collection
+            .filter((article) => !article.data.draft
+                && article.url && article.inputPath.startsWith('./src/articles/')
+                && article.data['tags'] && article.data['tags'].includes(value)
+            )
+            .sort((a, b) => b.date - a.date ); // sort by date - descending
     });
 
-    config.addCollection("articlesByCategory", (collection) => {
+
+
+
+
+
+    config.addCollection("articlesGroupedByCategory", (collection) => {
         return _
             .chain(collection.getAllSorted())
-            .filter((doc) => doc.url && doc.inputPath.startsWith('./src/articles/') && !doc.data.draft && doc.data.category)
+            .filter((doc) => doc.url && !doc.data.draft && doc.data.category
+                && doc.inputPath.startsWith('./src/articles/')
+            )
             .groupBy((doc) => doc.data.category)
             .toPairs()
             .reverse()
@@ -108,6 +126,27 @@ module.exports = function(config) {
             .value();
     });
 
+
+    /* =========================  Documentations Config ======================== */
+    config.addCollection("publishedDocumentations", (collection) => _.chain(collection.getAllSorted())
+        .filter((docs) => docs.url && docs.inputPath.startsWith('./src/docs/')
+            && docs.data['tags'] && docs.data['tags'].includes('docs')
+            && !docs.data['draft']
+        )
+        .reverse()
+        .value()
+    );
+
+    config.addNunjucksFilter("documentationsByTag", (collection, value) => {
+        return collection
+            .filter((docs) => !docs.data.draft
+                && docs.url && docs.inputPath.startsWith('./src/docs/')
+                && docs.data['tags'] && docs.data['tags'].includes(value)
+            )
+            .sort((a, b) => a.inputPath.localeCompare(b.inputPath)); // sort by docs filename
+    });
+
+
     /* =========================  Markdown Overrides ======================== */
     const markdownItAnchorOptions = {
         level: [1, 2, 3],
@@ -120,8 +159,8 @@ module.exports = function(config) {
 
     // This is the part that tells 11ty to swap to our custom config
     let markdownLibrary = markdownIt().use(markdownItAnchor, markdownItAnchorOptions);
-
     config.setLibrary("md", markdownLibrary);
+
 
     /* =========================  Plugins ======================== */
     config.addPlugin(pluginTOC, {

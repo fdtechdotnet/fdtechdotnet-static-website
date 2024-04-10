@@ -4,8 +4,9 @@ description: "Explore and familiarize with Microsoft Azure cloud services by lea
     infrastructure suited for your needs."
 ---
 
-{% if collections.cloudinfrastructure.length > 0 %}
-    {% for post in collections.cloudinfrastructure | sortedCollectionByDateDesc %}
+{%- set categoryArticles = collections.articles | articlesByCategoryTag('cloud-infrastructure') -%}
+{% if categoryArticles.length > 0 %}
+    {% for post in categoryArticles %}
         <a href="{{ post.url }}" class="article-list__item">
             <article>
                 <h3 class="article-list__item-title">{{ post.data.title }}</h3>

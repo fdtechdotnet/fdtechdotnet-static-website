@@ -1,0 +1,4 @@
+{
+    "layout": "_base.njk",
+    "permalink": "docs/{{ title | slugify }}/"
+}

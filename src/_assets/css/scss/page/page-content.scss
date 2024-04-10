@@ -9,13 +9,12 @@
     @media screen and (max-width:800px) {
         display: flex;
         flex-direction: column;
-        gap: var(--two-spacing);
     }
 
     &__overview {
 
         > h3 {
-            padding: 0 var(--two-spacing);
+            padding: 0 0 0 var(--two-spacing);
             text-transform: capitalize;
             font-family: var(--font-title);
             font-size: var(--text-size-title);
@@ -28,7 +27,7 @@
         }
 
         > p {
-            padding: 0 var(--two-spacing);
+            padding: 0 0 0 var(--two-spacing);
             margin: var(--default-spacing) 0 0 0;
 
             @media screen and (max-width:800px) {
@@ -55,24 +54,26 @@
             }
 
             > article {
-                padding: 0 var(--two-spacing);
+                padding: 0 0 0 var(--two-spacing);
 
                 @media screen and (max-width:800px) {
                     padding: 0 var(--default-spacing);
                 }
 
-                & h3, & h4, & h5, & h6 {
+                & :where(h4, h5, h6) {
                     color: var(--text-white);
                     text-transform: capitalize;
                 }
 
-                & h2 {
+                & :where(h2, h3) {
                     size: var(--text-size-lg);
+                    text-transform: capitalize;
                 }
 
                 & h1 {
-                    border-top: 5px solid var(--bg-primary);
+                    // border-top: 5px solid var(--bg-primary);
                     padding-top: var(--default-spacing);
+                    text-transform: capitalize;
                     display: block;
                 }
 
@@ -90,13 +91,17 @@
                 margin: 0 var(--default-spacing);
             }
 
-            :where(h1, h2, h3, h4, h5, h6):not(:first-child) {
-                margin: var(--three-spacing) 0 0 0;
+            :where(h1, h2, h3, h4, h5, h6){
+                text-transform: capitalize;
+
+                &:not(:first-child) {
+                    margin: var(--three-spacing) 0 0 0;
+                }
             }
         }
 
         .featured-figure {
-            padding: 0 var(--two-spacing);
+            padding: 0 0 0 var(--two-spacing);
             margin: 0;
 
             @media screen and (max-width:800px) {
@@ -127,6 +132,7 @@
                 font-weight: bold;
                 color: var(--text-primary);
             }
+
             &__description {
                 margin: 0;
                 padding: 0;
@@ -142,6 +148,10 @@
             flex-direction: column;
             gap: var(--two-spacing);
             margin: 0 0 0 var(--two-spacing);
+
+            @media screen and (max-width:800px) {
+                margin: 0 var(--default-spacing);
+            }
 
             &__item {
                 color: var(--text-light);
@@ -204,6 +214,10 @@
             flex-direction: column;
             gap: var(--two-spacing);
             margin: 0 0 0 var(--two-spacing);
+
+            @media screen and (max-width:800px) {
+                margin: 0 var(--default-spacing);
+            }
 
             &__item {
                 color: var(--text-light);
@@ -285,7 +299,7 @@
             font-family: var(--font-title);
             font-size: var(--text-size-subtitle);
             font-weight: bold;
-            text-transform: uppercase;
+            text-transform: capitalize;
             color: var(--text-primary);
         }
 
