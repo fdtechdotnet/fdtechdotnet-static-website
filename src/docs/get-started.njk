@@ -9,28 +9,37 @@ title: "Get Started"
    <div class="page-content__details">
         <div class="page-content__overview">
             <h3>Full-stack WebApp Development and Delivery with Cloud Services</h3>
-            <p>
-                Let's embark on a collaborative learning experience in a full-stack web application development and
-                delivery with cloud service infrastructures. Together, we'll unravel the complexities of
-                cloud-based development, from inception to deployment. Join me in learning exploration and
-                discussions, where knowledge flows freely and innovation thrives. Whether you're a novice
-                or seasoned developer, there's always something new to discover and to share.
-            </p>
-            <p>
-                Ready to expand your horizons? Explore this website to learn, experience, and improve!
-            </p>
+            <p>In today's fast-paced digital landscape, businesses and developers alike are constantly seeking
+                efficient ways to develop, deploy, and scale web applications. Full-stack web application development
+                coupled with cloud services has emerged as a transformative approach, enabling seamless creation,
+                deployment, and management of robust applications.</p>
+            <figure class="featured-figure">
+                <img src="/_assets/svg/fdtechdotnet-learning-target-and-scope.drawio.svg" alt="Learning Target and Scope" />
+            </figure>
+            <p>Full-stack web application development encompasses the entire software stack, from front-end
+                user interfaces to back-end server logic. This holistic approach empowers developers to craft
+                end-to-end solutions tailored to meet the needs of modern users. By leveraging a combination of
+                programming languages, frameworks, and tools, developers can create dynamic and interactive
+                web applications that deliver exceptional user experiences.</p>
+            <p>In parallel, cloud services have revolutionized the way applications are deployed and managed.
+                Cloud platforms offer scalable infrastructure, storage, and services on-demand, eliminating the need
+                for costly hardware investments and infrastructure maintenance. Additionally, cloud providers
+                offer a suite of tools and services designed to streamline the development and deployment process,
+                including continuous integration/continuous deployment (CI/CD) pipelines, auto-scaling capabilities,
+                and serverless computing.</p>
         </div>
-        <figure class="featured-figure">
-            <figcaption><h5>Figure 01: Learning Target and Scope</h5></figcaption>
-            <img src="/_assets/svg/fdtechdotnet-learning-target-and-scope.drawio.svg" alt="Learning Target and Scope" />
-        </figure>
         {% if docs.length > 0 %}
         <section class="page-content__details-list">
             {% for markdownContent in docs %}
                 {% if markdownContent.templateContent %}
                     <article>
                         {% if markdownContent.data.title %}
-                            <h1 id="{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</h1>
+                            <h1 id="{{ markdownContent.data.title | slugify }}">
+                                <span>{{ markdownContent.data.title }}</span>
+                                {% if markdownContent.data.category %}
+                                    <br /><small class="article-subtitle">{{ markdownContent.data.category}}</small>
+                                {% endif %}
+                            </h1>
                         {% endif %}
                         {{ markdownContent.templateContent | safe }}
                     </article>

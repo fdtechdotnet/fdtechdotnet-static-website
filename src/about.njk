@@ -1,20 +1,21 @@
 ---
-title: "All About This Website"
+title: "About Fullstack-dev Technology"
 ---
 
 {% include '_content/page-header.njk' %}
 
 <section class="page-content">
    <div class="page-content__details">
+        <figure class="featured-figure">
+            <img src="/_assets/img/_banner.png" alt="Fullstack-dev Technology Banner" />
+            <figcaption><h5>Fullstack-dev Technology Banner</h5></figcaption>
+        </figure>
         <section class="page-content__details-list">
             {% for markdownContent in collections.aboutpage | sortedCollectionByFilenameAsc %}
                 {% if markdownContent.templateContent %}
                     <article>
                         {% if markdownContent.data.title %}
-                        <h1>
-                            <a id="{{ markdownContent.data.title | slugify }}"></a>
-                            {{ markdownContent.data.title }}
-                        </h1>
+                            <h1 id="{{ markdownContent.data.title | slugify }}">{{ markdownContent.data.title }}</h1>
                         {% endif %}
                         {{ markdownContent.templateContent | safe }}
                     </article>

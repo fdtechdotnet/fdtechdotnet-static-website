@@ -25,7 +25,8 @@
 
     --text-lineheight: 1.5rem;
 
-    --text-size-small: 0.9rem;
+    --text-size-xs: 0.9rem;
+    --text-size-sm: 0.9rem;
     --text-size-default: 1rem;
     --text-size-subtitle: 1.25rem;
     --text-size-title: 1.5rem;
@@ -86,12 +87,12 @@ h3, h4, h5, h6 {
     padding: 0;
 }
 
-h1 { font-size: xx-large; }
-h2 { font-size: x-large; }
-h3 { font-size: larger; }
-h4 { font-size: large; }
-h5 { font-size: medium; }
-h6 { font-size: smaller; }
+h1 { font-size: var(--text-size-xl); line-height: var(--text-size-xl); }
+h2 { font-size: var(--text-size-lg); line-height: var(--text-size-lg); }
+h3 { font-size: var(--text-size-title); line-height: var(--text-size-title); }
+h4 { font-size: var(--text-size-subtitle); line-height: var(--text-size-subtitle); }
+h5 { font-size: var(--text-size-default); line-height: var(--text-size-default); }
+h6 { font-size: var(--text-size-sm); line-height: var(--text-size-sm); }
 
 a {
     text-decoration: none; color: var(--text-primary);
