@@ -1,15 +1,20 @@
 ---
-title: Fullstack-dev Technology
-shortcode: fdtechdotnet
+title: "Fullstack-dev Technology: The Static Website"
+shortcode: fdtechdotnet-static-website
 date: 2024-01-04
 ---
 
 
 ## Overview
 
-A portfolio website that aims to empower individuals to learn from their experiences and continuously improve themselves, both personally and professionally. Individuals can unlock their full potential and achieve their goals by committing to ongoing learning and being willing to embrace new experiences. This page strives to inspire and support this journey of self-discovery and growth.
-
-The `fdtechdotnet` is the shorthand handle name of this page derived from the pursuit of learning full-stack web application development and delivery using cloud services for infrastructure with .NET stack technologies.
+A portfolio static website under personal brand — Fullstack-dev Technology (`fdtechdotnet`). This website is JAM-stack playground with contents about full-stack web application development and delivery using cloud services infrastructure.
 
 ## Technology Used
->- ...
+- Eleventy
+- Nunjucks
+- Front Matter
+- HTML/HTML5
+- CSS — SASS/SCSS
+- JavaScript — Vanilla
+- Mermaid JS
+- JGraph/Draw.IO

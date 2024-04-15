@@ -57,7 +57,7 @@
           "title": "lastDateUpdated",
           "name": "lastDateUpdated",
           "type": "datetime"
-        },
+        }
       ]
     }
   ],
@@ -73,6 +73,27 @@
     "DevOps Practices",
     "WebApp Development"
   ],
-  "frontMatter.content.pageFolders": [],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "general-updates",
+      "path": "[[workspace]]/src/articles/general-updates"
+    },
+    {
+      "title": "webapp-development",
+      "path": "[[workspace]]/src/articles/webapp-development"
+    },
+    {
+      "title": "devops-practices",
+      "path": "[[workspace]]/src/articles/devops-practices"
+    },
+    {
+      "title": "cloud-infrastructure",
+      "path": "[[workspace]]/src/articles/cloud-infrastructure"
+    },
+    {
+      "title": "projects",
+      "path": "[[workspace]]/src/projects"
+    }
+  ],
   "frontMatter.dashboard.openOnStart": true
 }
